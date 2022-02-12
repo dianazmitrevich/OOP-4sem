@@ -13,9 +13,22 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         private string memory = "";
+        private string CurrentNumber = "";
+        private string NumberToExp = "";
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.CurrentNumber = Convert.ToString(this.TextBox.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TextBox.Text = this.CurrentNumber;
         }
 
         // ----
@@ -75,6 +88,73 @@ namespace WindowsFormsApp1
         {
             TextBox.Text += 9;
         }
+
         // ----
+
+        // методы для других кнопок
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            TextBox.Text = "";
+        }
+
+        private void DotButton_Click(object sender, EventArgs e)
+        {
+            if (TextBox.Text == "") TextBox.Text += "0.";
+            else TextBox.Text += ".";
+        }
+
+        private void DeletePreviousNumButton_Click(object sender, EventArgs e)
+        {
+            if (TextBox.Text.Length == 0) TextBox.Text = "";
+            else TextBox.Text = TextBox.Text.Substring(0, TextBox.Text.Length - 1);
+        }
+
+        private void SinButton_Click(object sender, EventArgs e)
+        {
+            var a = TextBox.Text;
+            TextBox.Text = Convert.ToString(Math.Sin(Convert.ToDouble(a)));
+        }
+
+        private void CosButton_Click(object sender, EventArgs e)
+        {
+            var a = TextBox.Text;
+            TextBox.Text = Convert.ToString(Math.Cos(Convert.ToDouble(a)));
+        }
+
+        private void TanButton_Click(object sender, EventArgs e)
+        {
+            var a = TextBox.Text;
+            TextBox.Text = Convert.ToString(Math.Tan(Convert.ToDouble(a)));
+        }
+
+        private void CtgButton_Click(object sender, EventArgs e)
+        {
+            var a = TextBox.Text;
+            TextBox.Text = Convert.ToString(1 / Math.Tan(Convert.ToDouble(a)));
+        }
+
+        private void SquareRootButton_Click(object sender, EventArgs e)
+        {
+            var a = TextBox.Text;
+            TextBox.Text = Convert.ToString(Math.Pow(Convert.ToDouble(a), 0.5));
+        }
+
+        private void CubeRootButton_Click(object sender, EventArgs e)
+        {
+            var a = TextBox.Text;
+            TextBox.Text = Convert.ToString(Math.Pow(Convert.ToDouble(a), 3));
+        }
+
+        private void ExponentationButton_Click(object sender, EventArgs e)
+        {
+            this.NumberToExp = this.CurrentNumber;
+            TextBox.Text = "";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var ExpNum = Convert.ToDouble(TextBox.Text);
+            TextBox.Text = Convert.ToString(Math.Pow(Convert.ToDouble(this.NumberToExp), ExpNum));
+        }
     }
 }
