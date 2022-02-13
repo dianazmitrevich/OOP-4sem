@@ -29,31 +29,23 @@ namespace WindowsFormsApp2
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.CollectionSizeInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.GenerateTheCollectionButton = new System.Windows.Forms.Button();
+            this.DescendingSortButton = new System.Windows.Forms.Button();
+            this.AscendingSortButton = new System.Windows.Forms.Button();
+            this.MinQueryButton = new System.Windows.Forms.Button();
+            this.MaxQueryButton = new System.Windows.Forms.Button();
+            this.RangeQueryButton = new System.Windows.Forms.Button();
+            this.ListBoxItems = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // CollectionSizeInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 198);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(325, 230);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(124, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(97, 20);
-            this.textBox2.TabIndex = 1;
+            this.CollectionSizeInput.Location = new System.Drawing.Point(124, 12);
+            this.CollectionSizeInput.Name = "CollectionSizeInput";
+            this.CollectionSizeInput.Size = new System.Drawing.Size(97, 20);
+            this.CollectionSizeInput.TabIndex = 1;
             // 
             // label1
             // 
@@ -64,83 +56,92 @@ namespace WindowsFormsApp2
             this.label1.TabIndex = 2;
             this.label1.Text = "Размер коллекции:";
             // 
-            // button1
+            // GenerateTheCollectionButton
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(227, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 21);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "сгенерировать!";
-            this.button1.UseVisualStyleBackColor = true;
+            this.GenerateTheCollectionButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GenerateTheCollectionButton.Location = new System.Drawing.Point(227, 11);
+            this.GenerateTheCollectionButton.Name = "GenerateTheCollectionButton";
+            this.GenerateTheCollectionButton.Size = new System.Drawing.Size(110, 21);
+            this.GenerateTheCollectionButton.TabIndex = 3;
+            this.GenerateTheCollectionButton.Text = "сгенерировать!";
+            this.GenerateTheCollectionButton.UseVisualStyleBackColor = true;
+            this.GenerateTheCollectionButton.Click += new System.EventHandler(this.GenerateTheCollectionButton_Click);
             // 
-            // button2
+            // DescendingSortButton
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(12, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 36);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Отсортировать по убыванию";
-            this.button2.UseVisualStyleBackColor = true;
+            this.DescendingSortButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DescendingSortButton.Location = new System.Drawing.Point(12, 49);
+            this.DescendingSortButton.Name = "DescendingSortButton";
+            this.DescendingSortButton.Size = new System.Drawing.Size(160, 36);
+            this.DescendingSortButton.TabIndex = 4;
+            this.DescendingSortButton.Text = "Отсортировать по убыванию";
+            this.DescendingSortButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // AscendingSortButton
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(178, 49);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 36);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Отсортировать по возрастанию";
-            this.button3.UseVisualStyleBackColor = true;
+            this.AscendingSortButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AscendingSortButton.Location = new System.Drawing.Point(178, 49);
+            this.AscendingSortButton.Name = "AscendingSortButton";
+            this.AscendingSortButton.Size = new System.Drawing.Size(159, 36);
+            this.AscendingSortButton.TabIndex = 5;
+            this.AscendingSortButton.Text = "Отсортировать по возрастанию";
+            this.AscendingSortButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // MinQueryButton
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(12, 91);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(325, 26);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Запрос 1: Минимальный элемент";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.MinQueryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MinQueryButton.Location = new System.Drawing.Point(12, 91);
+            this.MinQueryButton.Name = "MinQueryButton";
+            this.MinQueryButton.Size = new System.Drawing.Size(325, 26);
+            this.MinQueryButton.TabIndex = 6;
+            this.MinQueryButton.Text = "Запрос 1: Минимальный элемент";
+            this.MinQueryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MinQueryButton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // MaxQueryButton
             // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(12, 123);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(325, 26);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Запрос 2: Максимальный элемент";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
+            this.MaxQueryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MaxQueryButton.Location = new System.Drawing.Point(12, 123);
+            this.MaxQueryButton.Name = "MaxQueryButton";
+            this.MaxQueryButton.Size = new System.Drawing.Size(325, 26);
+            this.MaxQueryButton.TabIndex = 7;
+            this.MaxQueryButton.Text = "Запрос 2: Максимальный элемент";
+            this.MaxQueryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MaxQueryButton.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // RangeQueryButton
             // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Location = new System.Drawing.Point(12, 155);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(325, 26);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Запрос 3: Диапазон значений";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
+            this.RangeQueryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RangeQueryButton.Location = new System.Drawing.Point(12, 155);
+            this.RangeQueryButton.Name = "RangeQueryButton";
+            this.RangeQueryButton.Size = new System.Drawing.Size(325, 26);
+            this.RangeQueryButton.TabIndex = 8;
+            this.RangeQueryButton.Text = "Запрос 3: Диапазон значений";
+            this.RangeQueryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RangeQueryButton.UseVisualStyleBackColor = true;
+            // 
+            // ListBoxItems
+            // 
+            this.ListBoxItems.FormattingEnabled = true;
+            this.ListBoxItems.Location = new System.Drawing.Point(12, 187);
+            this.ListBoxItems.Name = "ListBoxItems";
+            this.ListBoxItems.Size = new System.Drawing.Size(325, 238);
+            this.ListBoxItems.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(349, 440);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ListBoxItems);
+            this.Controls.Add(this.RangeQueryButton);
+            this.Controls.Add(this.MaxQueryButton);
+            this.Controls.Add(this.MinQueryButton);
+            this.Controls.Add(this.AscendingSortButton);
+            this.Controls.Add(this.DescendingSortButton);
+            this.Controls.Add(this.GenerateTheCollectionButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.CollectionSizeInput);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -150,16 +151,15 @@ namespace WindowsFormsApp2
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox CollectionSizeInput;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button GenerateTheCollectionButton;
+        private System.Windows.Forms.Button DescendingSortButton;
+        private System.Windows.Forms.Button AscendingSortButton;
+        private System.Windows.Forms.Button MinQueryButton;
+        private System.Windows.Forms.Button MaxQueryButton;
+        private System.Windows.Forms.Button RangeQueryButton;
+        private System.Windows.Forms.ListBox ListBoxItems;
     }
 }
 
