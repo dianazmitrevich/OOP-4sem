@@ -76,6 +76,7 @@ namespace WindowsFormsApp2
             this.DescendingSortButton.TabIndex = 4;
             this.DescendingSortButton.Text = "Отсортировать по убыванию";
             this.DescendingSortButton.UseVisualStyleBackColor = true;
+            this.DescendingSortButton.Click += new System.EventHandler(this.DescendingSortButton_Click);
             // 
             // AscendingSortButton
             // 
@@ -86,6 +87,7 @@ namespace WindowsFormsApp2
             this.AscendingSortButton.TabIndex = 5;
             this.AscendingSortButton.Text = "Отсортировать по возрастанию";
             this.AscendingSortButton.UseVisualStyleBackColor = true;
+            this.AscendingSortButton.Click += new System.EventHandler(this.AscendingSortButton_Click);
             // 
             // MinQueryButton
             // 
@@ -97,6 +99,7 @@ namespace WindowsFormsApp2
             this.MinQueryButton.Text = "Запрос 1: Минимальный элемент";
             this.MinQueryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MinQueryButton.UseVisualStyleBackColor = true;
+            this.MinQueryButton.Click += new System.EventHandler(this.MinQueryButton_Click);
             // 
             // MaxQueryButton
             // 
@@ -108,6 +111,7 @@ namespace WindowsFormsApp2
             this.MaxQueryButton.Text = "Запрос 2: Максимальный элемент";
             this.MaxQueryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MaxQueryButton.UseVisualStyleBackColor = true;
+            this.MaxQueryButton.Click += new System.EventHandler(this.MaxQueryButton_Click);
             // 
             // RangeQueryButton
             // 
@@ -119,6 +123,7 @@ namespace WindowsFormsApp2
             this.RangeQueryButton.Text = "Запрос 3: Диапазон значений";
             this.RangeQueryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RangeQueryButton.UseVisualStyleBackColor = true;
+            this.RangeQueryButton.Click += new System.EventHandler(this.RangeQueryButton_Click);
             // 
             // ListBoxItems
             // 

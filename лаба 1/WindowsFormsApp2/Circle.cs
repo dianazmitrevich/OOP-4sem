@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp2
 {
-    public class Circle
+    public class Circle : IComparable
     {
         public int Radius { get; set; }
 
@@ -18,6 +18,15 @@ namespace WindowsFormsApp2
         public override string ToString()
         {
             return $"Радиус круга = {this.Radius}";
+        }
+        public int CompareTo(object Secondelement)
+        {
+            Circle secondElement = Secondelement as Circle;
+            if (secondElement == null) return -1;
+
+            if (this.Radius == secondElement.Radius) return 0;
+            else if (this.Radius > secondElement.Radius) return 1;
+            else return -1;
         }
     }
 }
