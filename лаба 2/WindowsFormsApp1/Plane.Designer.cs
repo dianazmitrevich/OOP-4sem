@@ -308,7 +308,7 @@ namespace WindowsFormsApp1
             this.AddCrewMemberButton.Name = "AddCrewMemberButton";
             this.AddCrewMemberButton.Size = new System.Drawing.Size(64, 20);
             this.AddCrewMemberButton.TabIndex = 21;
-            this.AddCrewMemberButton.Text = "+";
+            this.AddCrewMemberButton.Text = "add";
             this.AddCrewMemberButton.UseVisualStyleBackColor = true;
             // 
             // CrewSurname
@@ -413,7 +413,7 @@ namespace WindowsFormsApp1
             this.AddManufacturerButton.Name = "AddManufacturerButton";
             this.AddManufacturerButton.Size = new System.Drawing.Size(98, 20);
             this.AddManufacturerButton.TabIndex = 33;
-            this.AddManufacturerButton.Text = "+";
+            this.AddManufacturerButton.Text = "add";
             this.AddManufacturerButton.UseVisualStyleBackColor = true;
             // 
             // label15
