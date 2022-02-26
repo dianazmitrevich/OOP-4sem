@@ -33,21 +33,16 @@ namespace WindowsFormsApp1
             this.PlaneIDTextBox = new System.Windows.Forms.TextBox();
             this.PlaneTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.RadioButtonBoeingOption = new System.Windows.Forms.RadioButton();
             this.RadioButtonAirbusOption = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
+            this.PlaneLoadCapacityCheckbox = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.PlaneYearMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.PlaneDateService = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.PlaneCapacityNumeric = new System.Windows.Forms.NumericUpDown();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.CheckBoxOption10 = new System.Windows.Forms.CheckBox();
-            this.CheckBoxOption2 = new System.Windows.Forms.CheckBox();
-            this.CheckBoxOption1 = new System.Windows.Forms.CheckBox();
             this.AddPlaneButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.CrewPlaneID = new System.Windows.Forms.TextBox();
@@ -72,10 +67,11 @@ namespace WindowsFormsApp1
             this.OutputBox = new System.Windows.Forms.TextBox();
             this.ErrorBox = new System.Windows.Forms.TextBox();
             this.ResetBoxButton = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.ModelPanel = new System.Windows.Forms.Panel();
+            this.LoadCapacityCkeckbox = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.PlaneCapacityNumeric)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CrewAge)).BeginInit();
+            this.ModelPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -94,6 +90,7 @@ namespace WindowsFormsApp1
             this.PlaneIDTextBox.Name = "PlaneIDTextBox";
             this.PlaneIDTextBox.Size = new System.Drawing.Size(51, 20);
             this.PlaneIDTextBox.TabIndex = 1;
+            this.PlaneIDTextBox.TextChanged += new System.EventHandler(this.PlaneIDTextBox_TextChanged);
             // 
             // PlaneTypeComboBox
             // 
@@ -107,6 +104,7 @@ namespace WindowsFormsApp1
             this.PlaneTypeComboBox.Name = "PlaneTypeComboBox";
             this.PlaneTypeComboBox.Size = new System.Drawing.Size(126, 21);
             this.PlaneTypeComboBox.TabIndex = 2;
+            this.PlaneTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.PlaneTypeComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -117,21 +115,10 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 3;
             this.label2.Text = "Выберите тип самолета:";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.RadioButtonBoeingOption);
-            this.groupBox1.Controls.Add(this.RadioButtonAirbusOption);
-            this.groupBox1.Location = new System.Drawing.Point(159, 42);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(132, 43);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 0);
+            this.label3.Location = new System.Drawing.Point(167, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 2;
@@ -140,33 +127,35 @@ namespace WindowsFormsApp1
             // RadioButtonBoeingOption
             // 
             this.RadioButtonBoeingOption.AutoSize = true;
-            this.RadioButtonBoeingOption.Location = new System.Drawing.Point(68, 17);
+            this.RadioButtonBoeingOption.Location = new System.Drawing.Point(73, 10);
             this.RadioButtonBoeingOption.Name = "RadioButtonBoeingOption";
             this.RadioButtonBoeingOption.Size = new System.Drawing.Size(58, 17);
             this.RadioButtonBoeingOption.TabIndex = 1;
             this.RadioButtonBoeingOption.TabStop = true;
             this.RadioButtonBoeingOption.Text = "Boeing";
             this.RadioButtonBoeingOption.UseVisualStyleBackColor = true;
+            this.RadioButtonBoeingOption.CheckedChanged += new System.EventHandler(this.RadioButtonBoeingOption_CheckedChanged);
             // 
             // RadioButtonAirbusOption
             // 
             this.RadioButtonAirbusOption.AutoSize = true;
-            this.RadioButtonAirbusOption.Location = new System.Drawing.Point(8, 17);
+            this.RadioButtonAirbusOption.Location = new System.Drawing.Point(13, 10);
             this.RadioButtonAirbusOption.Name = "RadioButtonAirbusOption";
             this.RadioButtonAirbusOption.Size = new System.Drawing.Size(54, 17);
             this.RadioButtonAirbusOption.TabIndex = 0;
             this.RadioButtonAirbusOption.TabStop = true;
             this.RadioButtonAirbusOption.Text = "Airbus";
             this.RadioButtonAirbusOption.UseVisualStyleBackColor = true;
+            this.RadioButtonAirbusOption.CheckedChanged += new System.EventHandler(this.RadioButtonAirbusOption_CheckedChanged);
             // 
-            // label5
+            // PlaneLoadCapacityCheckbox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Грузоподъемность:";
+            this.PlaneLoadCapacityCheckbox.AutoSize = true;
+            this.PlaneLoadCapacityCheckbox.Location = new System.Drawing.Point(15, 145);
+            this.PlaneLoadCapacityCheckbox.Name = "PlaneLoadCapacityCheckbox";
+            this.PlaneLoadCapacityCheckbox.Size = new System.Drawing.Size(107, 13);
+            this.PlaneLoadCapacityCheckbox.TabIndex = 7;
+            this.PlaneLoadCapacityCheckbox.Text = "Грузоподъемность:";
             // 
             // label6
             // 
@@ -185,6 +174,7 @@ namespace WindowsFormsApp1
             this.PlaneYearMaskedTextBox.Size = new System.Drawing.Size(104, 20);
             this.PlaneYearMaskedTextBox.TabIndex = 12;
             this.PlaneYearMaskedTextBox.ValidatingType = typeof(int);
+            this.PlaneYearMaskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.PlaneYearMaskedTextBox_MaskInputRejected);
             // 
             // label7
             // 
@@ -232,48 +222,7 @@ namespace WindowsFormsApp1
             0,
             0,
             0});
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.CheckBoxOption10);
-            this.groupBox2.Controls.Add(this.CheckBoxOption2);
-            this.groupBox2.Controls.Add(this.CheckBoxOption1);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(18, 152);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(273, 51);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            // 
-            // CheckBoxOption10
-            // 
-            this.CheckBoxOption10.AutoSize = true;
-            this.CheckBoxOption10.Location = new System.Drawing.Point(95, 19);
-            this.CheckBoxOption10.Name = "CheckBoxOption10";
-            this.CheckBoxOption10.Size = new System.Drawing.Size(43, 17);
-            this.CheckBoxOption10.TabIndex = 10;
-            this.CheckBoxOption10.Text = "10т";
-            this.CheckBoxOption10.UseVisualStyleBackColor = true;
-            // 
-            // CheckBoxOption2
-            // 
-            this.CheckBoxOption2.AutoSize = true;
-            this.CheckBoxOption2.Location = new System.Drawing.Point(52, 19);
-            this.CheckBoxOption2.Name = "CheckBoxOption2";
-            this.CheckBoxOption2.Size = new System.Drawing.Size(37, 17);
-            this.CheckBoxOption2.TabIndex = 9;
-            this.CheckBoxOption2.Text = "2т";
-            this.CheckBoxOption2.UseVisualStyleBackColor = true;
-            // 
-            // CheckBoxOption1
-            // 
-            this.CheckBoxOption1.AutoSize = true;
-            this.CheckBoxOption1.Location = new System.Drawing.Point(9, 20);
-            this.CheckBoxOption1.Name = "CheckBoxOption1";
-            this.CheckBoxOption1.Size = new System.Drawing.Size(37, 17);
-            this.CheckBoxOption1.TabIndex = 8;
-            this.CheckBoxOption1.Text = "1т";
-            this.CheckBoxOption1.UseVisualStyleBackColor = true;
+            this.PlaneCapacityNumeric.ValueChanged += new System.EventHandler(this.PlaneCapacityNumeric_ValueChanged);
             // 
             // AddPlaneButton
             // 
@@ -491,11 +440,37 @@ namespace WindowsFormsApp1
             this.ResetBoxButton.Text = "Стереть поле";
             this.ResetBoxButton.UseVisualStyleBackColor = true;
             // 
+            // ModelPanel
+            // 
+            this.ModelPanel.Controls.Add(this.RadioButtonAirbusOption);
+            this.ModelPanel.Controls.Add(this.RadioButtonBoeingOption);
+            this.ModelPanel.Location = new System.Drawing.Point(157, 54);
+            this.ModelPanel.Name = "ModelPanel";
+            this.ModelPanel.Size = new System.Drawing.Size(144, 37);
+            this.ModelPanel.TabIndex = 44;
+            // 
+            // LoadCapacityCkeckbox
+            // 
+            this.LoadCapacityCkeckbox.FormattingEnabled = true;
+            this.LoadCapacityCkeckbox.Items.AddRange(new object[] {
+            "1т",
+            "2т",
+            "10т"});
+            this.LoadCapacityCkeckbox.Location = new System.Drawing.Point(18, 161);
+            this.LoadCapacityCkeckbox.Name = "LoadCapacityCkeckbox";
+            this.LoadCapacityCkeckbox.Size = new System.Drawing.Size(273, 49);
+            this.LoadCapacityCkeckbox.TabIndex = 45;
+            this.LoadCapacityCkeckbox.SelectedIndexChanged += new System.EventHandler(this.LoadCapacityCkeckbox_SelectedIndexChanged);
+            // 
             // Plane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 676);
+            this.Controls.Add(this.LoadCapacityCkeckbox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.ModelPanel);
+            this.Controls.Add(this.PlaneLoadCapacityCheckbox);
             this.Controls.Add(this.ResetBoxButton);
             this.Controls.Add(this.ErrorBox);
             this.Controls.Add(this.OutputBox);
@@ -520,14 +495,12 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.CrewPlaneID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.AddPlaneButton);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.PlaneCapacityNumeric);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.PlaneDateService);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.PlaneYearMaskedTextBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.PlaneTypeComboBox);
             this.Controls.Add(this.PlaneIDTextBox);
@@ -535,12 +508,10 @@ namespace WindowsFormsApp1
             this.Name = "Plane";
             this.Text = "м";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PlaneCapacityNumeric)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CrewAge)).EndInit();
+            this.ModelPanel.ResumeLayout(false);
+            this.ModelPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -552,21 +523,16 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox PlaneIDTextBox;
         private System.Windows.Forms.ComboBox PlaneTypeComboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton RadioButtonBoeingOption;
         private System.Windows.Forms.RadioButton RadioButtonAirbusOption;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label PlaneLoadCapacityCheckbox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox PlaneYearMaskedTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker PlaneDateService;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown PlaneCapacityNumeric;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox CheckBoxOption10;
-        private System.Windows.Forms.CheckBox CheckBoxOption2;
-        private System.Windows.Forms.CheckBox CheckBoxOption1;
         private System.Windows.Forms.Button AddPlaneButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox CrewPlaneID;
@@ -591,6 +557,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox OutputBox;
         private System.Windows.Forms.TextBox ErrorBox;
         private System.Windows.Forms.Button ResetBoxButton;
+        private System.Windows.Forms.Panel ModelPanel;
+        private System.Windows.Forms.CheckedListBox LoadCapacityCkeckbox;
     }
 }
 

@@ -8,18 +8,18 @@ namespace WindowsFormsApp1
 {
     public class PlaneInfo
     {
-        public int PlaneID;
+        public string PlaneID;
         public string PlaneType;
         public string PlaneModel;
-        public int PlaneCapacity;
-        public int PlaneLoadCapacity;
-        public int PlaneYear;
+        public string PlaneCapacity;
+        public string PlaneLoadCapacity;
+        public string PlaneYear;
         public DateTimeOffset PlaneTO;
         public Manufacturer planeManufacturer;
 
         public PlaneInfo() { }
 
-        public PlaneInfo(int planeID, string planeType, string planeModel, int planeCapacity, int planeLoadCapacity, int planeYear, DateTimeOffset planeTO)
+        public PlaneInfo(string planeID, string planeType, string planeModel, string planeCapacity, string planeLoadCapacity, string planeYear, DateTimeOffset planeTO)
         {
             this.PlaneID = planeID;
             this.PlaneType = planeType;
