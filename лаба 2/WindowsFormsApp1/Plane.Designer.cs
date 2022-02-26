@@ -37,10 +37,7 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.RadioButtonBoeingOption = new System.Windows.Forms.RadioButton();
             this.RadioButtonAirbusOption = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.PlaneLoadCapacityTrackBar = new System.Windows.Forms.TrackBar();
-            this.LoadCapacityOutput = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.PlaneYearMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,32 +50,32 @@ namespace WindowsFormsApp1
             this.CheckBoxOption1 = new System.Windows.Forms.CheckBox();
             this.AddPlaneButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.CrewPlaneID = new System.Windows.Forms.TextBox();
+            this.AddCrewMemberButton = new System.Windows.Forms.Button();
+            this.CrewSurname = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.CrewAge = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CrewWorkExperience = new System.Windows.Forms.TextBox();
+            this.CrewPosition = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ManufacturerPlaneID = new System.Windows.Forms.TextBox();
+            this.AddManufacturerButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.ManufacturerName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.ManufacturerCountry = new System.Windows.Forms.TextBox();
+            this.MaunfacturerYear = new System.Windows.Forms.MaskedTextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.OutputBox = new System.Windows.Forms.TextBox();
+            this.ErrorBox = new System.Windows.Forms.TextBox();
+            this.ResetBoxButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PlaneLoadCapacityTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlaneCapacityNumeric)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CrewAge)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -162,15 +159,6 @@ namespace WindowsFormsApp1
             this.RadioButtonAirbusOption.Text = "Airbus";
             this.RadioButtonAirbusOption.UseVisualStyleBackColor = true;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Кол-во пассажирских мест:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -180,24 +168,10 @@ namespace WindowsFormsApp1
             this.label5.TabIndex = 7;
             this.label5.Text = "Грузоподъемность:";
             // 
-            // PlaneLoadCapacityTrackBar
-            // 
-            this.PlaneLoadCapacityTrackBar.Location = new System.Drawing.Point(15, 112);
-            this.PlaneLoadCapacityTrackBar.Name = "PlaneLoadCapacityTrackBar";
-            this.PlaneLoadCapacityTrackBar.Size = new System.Drawing.Size(242, 45);
-            this.PlaneLoadCapacityTrackBar.TabIndex = 8;
-            // 
-            // LoadCapacityOutput
-            // 
-            this.LoadCapacityOutput.Location = new System.Drawing.Point(263, 112);
-            this.LoadCapacityOutput.Name = "LoadCapacityOutput";
-            this.LoadCapacityOutput.Size = new System.Drawing.Size(28, 20);
-            this.LoadCapacityOutput.TabIndex = 9;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 269);
+            this.label6.Location = new System.Drawing.Point(15, 217);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 13);
             this.label6.TabIndex = 11;
@@ -205,7 +179,7 @@ namespace WindowsFormsApp1
             // 
             // PlaneYearMaskedTextBox
             // 
-            this.PlaneYearMaskedTextBox.Location = new System.Drawing.Point(18, 285);
+            this.PlaneYearMaskedTextBox.Location = new System.Drawing.Point(18, 233);
             this.PlaneYearMaskedTextBox.Mask = "0000";
             this.PlaneYearMaskedTextBox.Name = "PlaneYearMaskedTextBox";
             this.PlaneYearMaskedTextBox.Size = new System.Drawing.Size(104, 20);
@@ -215,7 +189,7 @@ namespace WindowsFormsApp1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(126, 269);
+            this.label7.Location = new System.Drawing.Point(126, 217);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 13);
             this.label7.TabIndex = 13;
@@ -223,7 +197,7 @@ namespace WindowsFormsApp1
             // 
             // PlaneDateService
             // 
-            this.PlaneDateService.Location = new System.Drawing.Point(129, 284);
+            this.PlaneDateService.Location = new System.Drawing.Point(129, 232);
             this.PlaneDateService.Name = "PlaneDateService";
             this.PlaneDateService.Size = new System.Drawing.Size(162, 20);
             this.PlaneDateService.TabIndex = 14;
@@ -231,7 +205,7 @@ namespace WindowsFormsApp1
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 160);
+            this.label8.Location = new System.Drawing.Point(15, 108);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(135, 13);
             this.label8.TabIndex = 15;
@@ -244,7 +218,7 @@ namespace WindowsFormsApp1
             0,
             0,
             0});
-            this.PlaneCapacityNumeric.Location = new System.Drawing.Point(157, 160);
+            this.PlaneCapacityNumeric.Location = new System.Drawing.Point(157, 108);
             this.PlaneCapacityNumeric.Minimum = new decimal(new int[] {
             10,
             0,
@@ -265,7 +239,7 @@ namespace WindowsFormsApp1
             this.groupBox2.Controls.Add(this.CheckBoxOption2);
             this.groupBox2.Controls.Add(this.CheckBoxOption1);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(18, 204);
+            this.groupBox2.Location = new System.Drawing.Point(18, 152);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(273, 51);
             this.groupBox2.TabIndex = 17;
@@ -309,6 +283,7 @@ namespace WindowsFormsApp1
             this.AddPlaneButton.TabIndex = 18;
             this.AddPlaneButton.Text = "Добавить";
             this.AddPlaneButton.UseVisualStyleBackColor = true;
+            this.AddPlaneButton.Click += new System.EventHandler(this.AddPlaneButton_Click);
             // 
             // label9
             // 
@@ -320,28 +295,28 @@ namespace WindowsFormsApp1
             this.label9.TabIndex = 19;
             this.label9.Text = "Экипах, ID самолета —     ";
             // 
-            // textBox1
+            // CrewPlaneID
             // 
-            this.textBox1.Location = new System.Drawing.Point(533, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(51, 20);
-            this.textBox1.TabIndex = 20;
+            this.CrewPlaneID.Location = new System.Drawing.Point(533, 12);
+            this.CrewPlaneID.Name = "CrewPlaneID";
+            this.CrewPlaneID.Size = new System.Drawing.Size(51, 20);
+            this.CrewPlaneID.TabIndex = 20;
             // 
-            // button1
+            // AddCrewMemberButton
             // 
-            this.button1.Location = new System.Drawing.Point(590, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 20);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddCrewMemberButton.Location = new System.Drawing.Point(590, 12);
+            this.AddCrewMemberButton.Name = "AddCrewMemberButton";
+            this.AddCrewMemberButton.Size = new System.Drawing.Size(64, 20);
+            this.AddCrewMemberButton.TabIndex = 21;
+            this.AddCrewMemberButton.Text = "+";
+            this.AddCrewMemberButton.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // CrewSurname
             // 
-            this.textBox2.Location = new System.Drawing.Point(449, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(205, 20);
-            this.textBox2.TabIndex = 22;
+            this.CrewSurname.Location = new System.Drawing.Point(449, 46);
+            this.CrewSurname.Name = "CrewSurname";
+            this.CrewSurname.Size = new System.Drawing.Size(205, 20);
+            this.CrewSurname.TabIndex = 22;
             // 
             // label10
             // 
@@ -370,18 +345,18 @@ namespace WindowsFormsApp1
             this.label12.TabIndex = 26;
             this.label12.Text = "Возраст";
             // 
-            // numericUpDown1
+            // CrewAge
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(381, 124);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.CrewAge.Location = new System.Drawing.Point(381, 124);
+            this.CrewAge.Minimum = new decimal(new int[] {
             18,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(71, 20);
-            this.numericUpDown1.TabIndex = 27;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.CrewAge.Name = "CrewAge";
+            this.CrewAge.Size = new System.Drawing.Size(71, 20);
+            this.CrewAge.TabIndex = 27;
+            this.CrewAge.Value = new decimal(new int[] {
             18,
             0,
             0,
@@ -396,24 +371,24 @@ namespace WindowsFormsApp1
             this.label13.TabIndex = 28;
             this.label13.Text = "Стаж";
             // 
-            // textBox3
+            // CrewWorkExperience
             // 
-            this.textBox3.Location = new System.Drawing.Point(467, 124);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(187, 20);
-            this.textBox3.TabIndex = 29;
+            this.CrewWorkExperience.Location = new System.Drawing.Point(467, 124);
+            this.CrewWorkExperience.Name = "CrewWorkExperience";
+            this.CrewWorkExperience.Size = new System.Drawing.Size(187, 20);
+            this.CrewWorkExperience.TabIndex = 29;
             // 
-            // comboBox1
+            // CrewPosition
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CrewPosition.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CrewPosition.FormattingEnabled = true;
+            this.CrewPosition.Items.AddRange(new object[] {
             "пилот",
             "стюард"});
-            this.comboBox1.Location = new System.Drawing.Point(449, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(205, 21);
-            this.comboBox1.TabIndex = 30;
+            this.CrewPosition.Location = new System.Drawing.Point(449, 75);
+            this.CrewPosition.Name = "CrewPosition";
+            this.CrewPosition.Size = new System.Drawing.Size(205, 21);
+            this.CrewPosition.TabIndex = 30;
             // 
             // label14
             // 
@@ -425,21 +400,21 @@ namespace WindowsFormsApp1
             this.label14.TabIndex = 31;
             this.label14.Text = "Производитель,\r\nID самолета —     ";
             // 
-            // textBox4
+            // ManufacturerPlaneID
             // 
-            this.textBox4.Location = new System.Drawing.Point(499, 190);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(51, 20);
-            this.textBox4.TabIndex = 32;
+            this.ManufacturerPlaneID.Location = new System.Drawing.Point(499, 190);
+            this.ManufacturerPlaneID.Name = "ManufacturerPlaneID";
+            this.ManufacturerPlaneID.Size = new System.Drawing.Size(51, 20);
+            this.ManufacturerPlaneID.TabIndex = 32;
             // 
-            // button2
+            // AddManufacturerButton
             // 
-            this.button2.Location = new System.Drawing.Point(556, 190);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 20);
-            this.button2.TabIndex = 33;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AddManufacturerButton.Location = new System.Drawing.Point(556, 190);
+            this.AddManufacturerButton.Name = "AddManufacturerButton";
+            this.AddManufacturerButton.Size = new System.Drawing.Size(98, 20);
+            this.AddManufacturerButton.TabIndex = 33;
+            this.AddManufacturerButton.Text = "+";
+            this.AddManufacturerButton.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
@@ -450,12 +425,12 @@ namespace WindowsFormsApp1
             this.label15.TabIndex = 35;
             this.label15.Text = "Название";
             // 
-            // textBox5
+            // ManufacturerName
             // 
-            this.textBox5.Location = new System.Drawing.Point(466, 237);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(188, 20);
-            this.textBox5.TabIndex = 34;
+            this.ManufacturerName.Location = new System.Drawing.Point(466, 237);
+            this.ManufacturerName.Name = "ManufacturerName";
+            this.ManufacturerName.Size = new System.Drawing.Size(188, 20);
+            this.ManufacturerName.TabIndex = 34;
             // 
             // label16
             // 
@@ -466,21 +441,21 @@ namespace WindowsFormsApp1
             this.label16.TabIndex = 37;
             this.label16.Text = "Страна";
             // 
-            // textBox6
+            // ManufacturerCountry
             // 
-            this.textBox6.Location = new System.Drawing.Point(466, 263);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(189, 20);
-            this.textBox6.TabIndex = 36;
+            this.ManufacturerCountry.Location = new System.Drawing.Point(466, 263);
+            this.ManufacturerCountry.Name = "ManufacturerCountry";
+            this.ManufacturerCountry.Size = new System.Drawing.Size(189, 20);
+            this.ManufacturerCountry.TabIndex = 36;
             // 
-            // maskedTextBox1
+            // MaunfacturerYear
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(466, 289);
-            this.maskedTextBox1.Mask = "0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(189, 20);
-            this.maskedTextBox1.TabIndex = 39;
-            this.maskedTextBox1.ValidatingType = typeof(int);
+            this.MaunfacturerYear.Location = new System.Drawing.Point(466, 289);
+            this.MaunfacturerYear.Mask = "0000";
+            this.MaunfacturerYear.Name = "MaunfacturerYear";
+            this.MaunfacturerYear.Size = new System.Drawing.Size(189, 20);
+            this.MaunfacturerYear.TabIndex = 39;
+            this.MaunfacturerYear.ValidatingType = typeof(int);
             // 
             // label17
             // 
@@ -491,48 +466,58 @@ namespace WindowsFormsApp1
             this.label17.TabIndex = 38;
             this.label17.Text = "Год основания";
             // 
-            // textBox7
+            // OutputBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(18, 325);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(306, 331);
-            this.textBox7.TabIndex = 40;
+            this.OutputBox.Location = new System.Drawing.Point(18, 325);
+            this.OutputBox.Multiline = true;
+            this.OutputBox.Name = "OutputBox";
+            this.OutputBox.Size = new System.Drawing.Size(306, 331);
+            this.OutputBox.TabIndex = 40;
             // 
-            // textBox8
+            // ErrorBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(341, 325);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(313, 331);
-            this.textBox8.TabIndex = 41;
+            this.ErrorBox.Location = new System.Drawing.Point(341, 325);
+            this.ErrorBox.Multiline = true;
+            this.ErrorBox.Name = "ErrorBox";
+            this.ErrorBox.Size = new System.Drawing.Size(313, 331);
+            this.ErrorBox.TabIndex = 41;
+            // 
+            // ResetBoxButton
+            // 
+            this.ResetBoxButton.Location = new System.Drawing.Point(18, 276);
+            this.ResetBoxButton.Name = "ResetBoxButton";
+            this.ResetBoxButton.Size = new System.Drawing.Size(155, 33);
+            this.ResetBoxButton.TabIndex = 43;
+            this.ResetBoxButton.Text = "Стереть поле";
+            this.ResetBoxButton.UseVisualStyleBackColor = true;
             // 
             // Plane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 676);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.ResetBoxButton);
+            this.Controls.Add(this.ErrorBox);
+            this.Controls.Add(this.OutputBox);
+            this.Controls.Add(this.MaunfacturerYear);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.ManufacturerCountry);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.ManufacturerName);
+            this.Controls.Add(this.AddManufacturerButton);
+            this.Controls.Add(this.ManufacturerPlaneID);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.CrewPosition);
+            this.Controls.Add(this.CrewWorkExperience);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.CrewAge);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.CrewSurname);
+            this.Controls.Add(this.AddCrewMemberButton);
+            this.Controls.Add(this.CrewPlaneID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.AddPlaneButton);
             this.Controls.Add(this.groupBox2);
@@ -542,9 +527,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label7);
             this.Controls.Add(this.PlaneYearMaskedTextBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.LoadCapacityOutput);
-            this.Controls.Add(this.PlaneLoadCapacityTrackBar);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.PlaneTypeComboBox);
@@ -555,11 +537,10 @@ namespace WindowsFormsApp1
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PlaneLoadCapacityTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlaneCapacityNumeric)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CrewAge)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -575,10 +556,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton RadioButtonBoeingOption;
         private System.Windows.Forms.RadioButton RadioButtonAirbusOption;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TrackBar PlaneLoadCapacityTrackBar;
-        private System.Windows.Forms.TextBox LoadCapacityOutput;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox PlaneYearMaskedTextBox;
         private System.Windows.Forms.Label label7;
@@ -591,27 +569,28 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.CheckBox CheckBoxOption1;
         private System.Windows.Forms.Button AddPlaneButton;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox CrewPlaneID;
+        private System.Windows.Forms.Button AddCrewMemberButton;
+        private System.Windows.Forms.TextBox CrewSurname;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown CrewAge;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox CrewWorkExperience;
+        private System.Windows.Forms.ComboBox CrewPosition;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox ManufacturerPlaneID;
+        private System.Windows.Forms.Button AddManufacturerButton;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox ManufacturerName;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox ManufacturerCountry;
+        private System.Windows.Forms.MaskedTextBox MaunfacturerYear;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox OutputBox;
+        private System.Windows.Forms.TextBox ErrorBox;
+        private System.Windows.Forms.Button ResetBoxButton;
     }
 }
 
