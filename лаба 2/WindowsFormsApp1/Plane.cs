@@ -34,15 +34,16 @@ namespace WindowsFormsApp1
 
         private void AddPlaneButton_Click(object sender, EventArgs e)
         {
-            if(!fieldsInputValidation())
+            if (fieldsInputValidation())
             {
-                MessageBox.Show("Проверьте чтобы были заполнены все поля!");
+                PlaneInfo element = new PlaneInfo(planeID, planeType, ModelPlane, PlaneCapacityNumeric.Value.ToString(), loadCapacity, planeYear, PlaneDateService.Value);
+
+                this.plane = this.plane.Append(element).ToArray();
+                OutputBox.Text += element.ToString();
+                this.ClearForm();
             }
 
-            PlaneInfo element = new PlaneInfo(planeID, planeType, ModelPlane, PlaneCapacityNumeric.Value.ToString(), loadCapacity, planeYear, PlaneDateService.Value);
-
-            this.plane = this.plane.Append(element).ToArray();
-            this.ClearForm();
+            else MessageBox.Show("Проверьте чтобы были заполнены все поля!");
         }
 
         private bool fieldsInputValidation()
@@ -88,7 +89,7 @@ namespace WindowsFormsApp1
         }
         private void PlaneYearMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            if (PlaneYearMaskedTextBox.Text != "") planeYear = PlaneYearMaskedTextBox.Text.ToString();
+            if (PlaneYearMaskedTextBox.Text != "") planeYear = Convert.ToString(PlaneYearMaskedTextBox.Text);
         }
 
         // ----

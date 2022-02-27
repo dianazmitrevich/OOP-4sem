@@ -29,5 +29,12 @@ namespace WindowsFormsApp1
             this.PlaneYear = planeYear;
             this.PlaneTO = planeTO;
         }
+
+        public override string ToString()
+        {
+            return $"{this.PlaneType} {this.PlaneModel} #{this.PlaneID}, " +
+                $"вместимость - {this.PlaneCapacity} человек, грузоподъемность - {this.PlaneLoadCapacity}, " +
+                $"год выпуска и дата последнего ТО - {this.PlaneYear} и {this.PlaneTO}.";
+        }
     }
 }
