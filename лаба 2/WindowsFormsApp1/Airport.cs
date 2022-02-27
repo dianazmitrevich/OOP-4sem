@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Json;
 
 namespace WindowsFormsApp1
 {
@@ -83,7 +85,6 @@ namespace WindowsFormsApp1
         {
             if (RadioButtonBoeingOption.Checked) ModelPlane = Convert.ToString(RadioButtonBoeingOption.Text);
         }
-
         private void ResetBoxButton_Click(object sender, EventArgs e)
         {
             if (OutputBox.Text != "") OutputBox.Text = "";
@@ -95,6 +96,7 @@ namespace WindowsFormsApp1
         private void LoadCapacityCkeckbox_SelectedIndexChanged(object sender, EventArgs e) { }
         private void PlaneYearMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e) { }
         private void PlaneCapacityNumeric_ValueChanged(object sender, EventArgs e) { }
+        // ----
 
         private void AddManufacturerButton_Click(object sender, EventArgs e)
         {
@@ -148,15 +150,47 @@ namespace WindowsFormsApp1
 
             else MessageBox.Show("Проверьте чтобы все поля поля заполнены!");
         }
-        // ----
 
-        /*
-        private void WriteInfoButton_Click(object sender, EventArgs e)
+        private void ShowInfoButton_Click(object sender, EventArgs e)
         {
-            DataContractJsonSerializer writeFile = new DataContractJsonSerializer(typeof(PlaneInfo[]));
-            using (FileStream fs = new FileStream("PlaneInfo.json", FileMode.OpenOrCreate))
+            string showTypeInfo = ShowTypeInfo.Text;
+
+            if (ShowTypeInfo.Text != "" && PlaneIDShowInfo.Text != "")
             {
-                writeFile.WriteObject(fs, this.plane);
+                for (int i = 0; i < plane.Length; i++)
+                {
+                    if (plane[i].PlaneID == PlaneIDShowInfo.Text)
+                    {
+                        if(showTypeInfo == "самолете")
+                        {
+                            OutputBox.Text += $"Информация о самолете #{plane[i].PlaneID}:" + Environment.NewLine
+                                + plane[i].ToString() + Environment.NewLine;
+                        }
+                        else if(showTypeInfo == "экипаже")
+                        {
+                            OutputBox.Text += $"Информация об экипаже самолета #{plane[i].PlaneID}:" + Environment.NewLine;
+                            for(int j = 0; j < plane[i].planeCrew.Length; j++)
+                                OutputBox.Text += plane[i].planeCrew[j] + Environment.NewLine;
+                        }
+                        else if (showTypeInfo == "производителе")
+                        {
+                            OutputBox.Text += $"Информация о производителе самолета #{plane[i].PlaneID}:" + Environment.NewLine
+                                + plane[i].planeManufacturer + Environment.NewLine;
+                        }
+                    }
+                    else throw new ArgumentException("Самолета с таким ID нет в стеке!");
+                }
+            }
+
+            else MessageBox.Show("Проверьте чтобы все поля поля заполнены!");
+        }
+
+        /*private void WriteFileButton_Click(object sender, EventArgs e)
+        {
+            DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(PlaneInfo[]));
+            using (FileStream fs = new FileStream("bankAccounts.json", FileMode.OpenOrCreate))
+            {
+                serializer.WriteObject(fs, this.plane);
             }
         }
         */

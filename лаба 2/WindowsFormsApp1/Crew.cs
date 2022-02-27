@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
 
         public override string ToString()
         {
-            return $"{this.CrewPosition} {this.CrewName} (возраст {this.CrewAge}) со стажем {this.CrewWorkExperience}";
+            return $"{this.CrewPosition} {this.CrewName} (возраст {this.CrewAge}) со стажем {this.CrewWorkExperience}" + Environment.NewLine;
         }
     }
 }

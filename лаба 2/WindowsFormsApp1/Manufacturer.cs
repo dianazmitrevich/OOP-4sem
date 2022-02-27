@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
 
         public override string ToString()
         {
-            return ($"Производитель {this.ManufacturerName}, {this.ManufacturerCountry}, {this.ManufacturerYear}");
+            return ($"Производитель {this.ManufacturerName}, {this.ManufacturerCountry}, {this.ManufacturerYear}") + Environment.NewLine;
         }
     }
 }
