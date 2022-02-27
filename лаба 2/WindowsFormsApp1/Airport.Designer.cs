@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class Plane
+    partial class Airport
     {
         /// <summary>
         /// Обязательная переменная конструктора.

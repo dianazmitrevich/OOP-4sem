@@ -8,12 +8,7 @@ namespace WindowsFormsApp1
 {
     public class PlaneInfo
     {
-        public string PlaneID;
-        public string PlaneType;
-        public string PlaneModel;
-        public string PlaneCapacity;
-        public string PlaneLoadCapacity;
-        public string PlaneYear;
+        public string PlaneID, PlaneType, PlaneModel, PlaneCapacity, PlaneLoadCapacity, PlaneYear;
         public DateTimeOffset PlaneTO;
         public Manufacturer planeManufacturer;
 

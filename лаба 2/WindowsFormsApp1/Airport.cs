@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Plane : Form
+    public partial class Airport : Form
     {
         private PlaneInfo[] plane = new PlaneInfo[] { };
         private string ModelPlane;
@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         private string loadCapacity;
         private string planeYear;
 
-        public Plane()
+        public Airport()
         {
             InitializeComponent();
         }
