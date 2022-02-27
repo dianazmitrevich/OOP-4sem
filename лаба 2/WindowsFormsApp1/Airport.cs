@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
     public partial class Airport : Form
     {
         private PlaneInfo[] plane = new PlaneInfo[] { };
+        public Crew[] planeCrew = new Crew[] { };
         private string ModelPlane;
 
         public Airport()
@@ -68,6 +69,10 @@ namespace WindowsFormsApp1
             ManufacturerName.Text = "";
             ManufacturerCountry.Text = "";
             MaunfacturerYear.Text = "";
+            CrewSurname.Text = "";
+            CrewPosition.Text = "";
+            CrewAge.Value = CrewAge.Minimum;
+            CrewWorkExperience.Text = "";
         }
 
         private void RadioButtonAirbusOption_CheckedChanged(object sender, EventArgs e)
@@ -110,6 +115,33 @@ namespace WindowsFormsApp1
                         OutputBox.Text += $"{element.ToString()} добавлен/изменен у карточки самолета #{plane[i].PlaneID}" + Environment.NewLine;
                     }
 
+                    else throw new ArgumentException("Самолета с таким ID нет в стеке!");
+                }
+            }
+
+            else MessageBox.Show("Проверьте чтобы все поля поля заполнены!");
+        }
+
+        private void AddCrewMemberButton_Click(object sender, EventArgs e)
+        {
+            if (CrewSurname.Text != "" && CrewPosition.Text != "" && CrewAge.Text != "" && CrewWorkExperience.Text != "")
+            {
+                for (int i = 0; i < plane.Length; i++)
+                {
+                    if (plane[i].PlaneID == CrewPlaneID.Text)
+                    {
+                        Crew element = new Crew(
+                            CrewSurname.Text,
+                            CrewPosition.Text,
+                            Convert.ToInt32(CrewAge.Text),
+                            CrewWorkExperience.Text);
+
+                        this.planeCrew = this.planeCrew.Append(element).ToArray();
+                        plane[i].planeCrew = planeCrew;
+
+                        ClearForm();
+                        OutputBox.Text += $"{element.ToString()} добавлен в экипаж самолета #{plane[i].PlaneID}" + Environment.NewLine;
+                    }
                     else throw new ArgumentException("Самолета с таким ID нет в стеке!");
                 }
             }

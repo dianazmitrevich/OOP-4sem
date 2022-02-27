@@ -10,6 +10,7 @@ namespace WindowsFormsApp1
     {
         public string PlaneModel, PlaneCapacity, PlaneLoadCapacity, PlaneYear;
         private string planeID , planeType;
+        public Crew[] planeCrew = new Crew[] { };
         public DateTimeOffset PlaneTO;
 
         public string PlaneID

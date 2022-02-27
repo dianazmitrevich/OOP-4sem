@@ -258,6 +258,7 @@ namespace WindowsFormsApp1
             this.AddCrewMemberButton.TabIndex = 21;
             this.AddCrewMemberButton.Text = "add";
             this.AddCrewMemberButton.UseVisualStyleBackColor = true;
+            this.AddCrewMemberButton.Click += new System.EventHandler(this.AddCrewMemberButton_Click);
             // 
             // CrewSurname
             // 
