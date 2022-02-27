@@ -20,5 +20,10 @@ namespace WindowsFormsApp1
             this.ManufacturerCountry = country;
             this.ManufacturerYear = year;
         }
+
+        public override string ToString()
+        {
+            return ($"Производитель {this.ManufacturerName}, {this.ManufacturerCountry}, {this.ManufacturerYear}");
+        }
     }
 }

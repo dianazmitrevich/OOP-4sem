@@ -15,10 +15,6 @@ namespace WindowsFormsApp1
     {
         private PlaneInfo[] plane = new PlaneInfo[] { };
         private string ModelPlane;
-        private string planeID;
-        private string planeType;
-        private string loadCapacity;
-        private string planeYear;
 
         public Airport()
         {
@@ -26,17 +22,21 @@ namespace WindowsFormsApp1
         }
 
         // ----
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void Form1_Load(object sender, EventArgs e) { }
         // ---
 
         private void AddPlaneButton_Click(object sender, EventArgs e)
         {
-            if (fieldsInputValidation())
+            if (isFieldNotEmpty())
             {
-                PlaneInfo element = new PlaneInfo(planeID, planeType, ModelPlane, PlaneCapacityNumeric.Value.ToString(), loadCapacity, planeYear, PlaneDateService.Value);
+                PlaneInfo element = new PlaneInfo(
+                    PlaneIDTextBox.Text,
+                    (string)PlaneTypeComboBox.SelectedItem,
+                    ModelPlane,
+                    PlaneCapacityNumeric.Value.ToString(),
+                    Convert.ToString(LoadCapacityCkeckbox.Text),
+                    Convert.ToString(PlaneYearMaskedTextBox.Text),
+                    PlaneDateService.Value);
 
                 this.plane = this.plane.Append(element).ToArray();
                 OutputBox.Text += element.ToString();
@@ -46,10 +46,10 @@ namespace WindowsFormsApp1
             else MessageBox.Show("Проверьте чтобы были заполнены все поля!");
         }
 
-        private bool fieldsInputValidation()
+        private bool isFieldNotEmpty()
         {
             if (PlaneIDTextBox.Text == "") return false;
-            else if (PlaneTypeComboBox.SelectedIndex == 0) return false;
+            else if (PlaneTypeComboBox.SelectedIndex != 0 && PlaneTypeComboBox.SelectedIndex != 1 && PlaneTypeComboBox.SelectedIndex != 2) return false;
             else if (ModelPlane == "") return false;
             else if (PlaneLoadCapacityCheckbox.Text == "") return false;
             else if (PlaneYearMaskedTextBox.Text == "") return false;
@@ -65,6 +65,9 @@ namespace WindowsFormsApp1
             PlaneCapacityNumeric.Value = PlaneCapacityNumeric.Minimum;
             PlaneYearMaskedTextBox.Text = "";
             PlaneDateService.Value = DateTime.Now;
+            ManufacturerName.Text = "";
+            ManufacturerCountry.Text = "";
+            MaunfacturerYear.Text = "";
         }
 
         private void RadioButtonAirbusOption_CheckedChanged(object sender, EventArgs e)
@@ -75,25 +78,44 @@ namespace WindowsFormsApp1
         {
             if (RadioButtonBoeingOption.Checked) ModelPlane = Convert.ToString(RadioButtonBoeingOption.Text);
         }
-        private void PlaneIDTextBox_TextChanged(object sender, EventArgs e)
+
+        private void ResetBoxButton_Click(object sender, EventArgs e)
         {
-            if (PlaneIDTextBox.Text != "") planeID = PlaneIDTextBox.Text;
-        }
-        private void PlaneTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (PlaneTypeComboBox.SelectedIndex != 0) planeType = (string)PlaneTypeComboBox.SelectedItem;
-        }
-        private void LoadCapacityCkeckbox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (LoadCapacityCkeckbox.SelectedIndex != 0) loadCapacity = LoadCapacityCkeckbox.Items.ToString();
-        }
-        private void PlaneYearMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-            if (PlaneYearMaskedTextBox.Text != "") planeYear = Convert.ToString(PlaneYearMaskedTextBox.Text);
+            if (OutputBox.Text != "") OutputBox.Text = "";
         }
 
         // ----
+        private void PlaneIDTextBox_TextChanged(object sender, EventArgs e) { }
+        private void PlaneTypeComboBox_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void LoadCapacityCkeckbox_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void PlaneYearMaskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e) { }
         private void PlaneCapacityNumeric_ValueChanged(object sender, EventArgs e) { }
+
+        private void AddManufacturerButton_Click(object sender, EventArgs e)
+        {
+            if (ManufacturerName.Text != "" && ManufacturerCountry.Text != "" && MaunfacturerYear.Text != "")
+            {
+                for (int i = 0; i < plane.Length; i++)
+                {
+                    if (plane[i].PlaneID == ManufacturerPlaneID.Text)
+                    {
+                        Manufacturer element = new Manufacturer(
+                            ManufacturerName.Text,
+                            ManufacturerCountry.Text,
+                            Convert.ToInt32(MaunfacturerYear.Text));
+
+                        plane[i].planeManufacturer = element;
+
+                        ClearForm();
+                        OutputBox.Text += $"{element.ToString()} добавлен/изменен у карточки самолета #{plane[i].PlaneID}" + Environment.NewLine;
+                    }
+
+                    else throw new ArgumentException("Самолета с таким ID нет в стеке!");
+                }
+            }
+
+            else MessageBox.Show("Проверьте чтобы все поля поля заполнены!");
+        }
         // ----
 
         /*

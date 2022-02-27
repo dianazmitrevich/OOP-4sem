@@ -8,9 +8,33 @@ namespace WindowsFormsApp1
 {
     public class PlaneInfo
     {
-        public string PlaneID, PlaneType, PlaneModel, PlaneCapacity, PlaneLoadCapacity, PlaneYear;
+        public string PlaneModel, PlaneCapacity, PlaneLoadCapacity, PlaneYear;
+        private string planeID , planeType;
         public DateTimeOffset PlaneTO;
-        public Manufacturer planeManufacturer;
+
+        public string PlaneID
+        {
+            get => this.planeID;
+            set
+            {
+                if (value.ToString().Length == 4)
+                    this.planeID = value;
+                else throw new ArgumentException("ID самолета должно состоять из 4 знаков!");
+            }
+        }
+
+        public string PlaneType
+        {
+            get => this.planeType;
+            set
+            {
+                string[] planeTypes = { "Пассажирский", "Грузовой", "Военный" };
+                if (planeTypes.Contains(value)) this.planeType = value;
+                else throw new ArgumentException("Выберите тип самолета из списка!");
+            }
+        }
+
+        public Manufacturer planeManufacturer { get; set; }
 
         public PlaneInfo() { }
 
@@ -29,7 +53,7 @@ namespace WindowsFormsApp1
         {
             return $"{this.PlaneType} {this.PlaneModel} #{this.PlaneID}, " +
                 $"вместимость - {this.PlaneCapacity} человек, грузоподъемность - {this.PlaneLoadCapacity}, " +
-                $"год выпуска и дата последнего ТО - {this.PlaneYear} и {this.PlaneTO}.";
+                $"год выпуска и дата последнего ТО - {this.PlaneYear} и {this.PlaneTO}." + Environment.NewLine;
         }
     }
 }
