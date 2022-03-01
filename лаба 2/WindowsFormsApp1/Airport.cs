@@ -100,92 +100,110 @@ namespace WindowsFormsApp1
 
         private void AddManufacturerButton_Click(object sender, EventArgs e)
         {
-            if (ManufacturerName.Text != "" && ManufacturerCountry.Text != "" && MaunfacturerYear.Text != "")
+            if (plane.Length != 0)
             {
-                for (int i = 0; i < plane.Length; i++)
+                if (ManufacturerName.Text != "" && ManufacturerCountry.Text != "" && MaunfacturerYear.Text != "")
                 {
-                    if (plane[i].PlaneID == ManufacturerPlaneID.Text)
+                    for (int i = 0; i < plane.Length; i++)
                     {
-                        Manufacturer element = new Manufacturer(
-                            ManufacturerName.Text,
-                            ManufacturerCountry.Text,
-                            Convert.ToInt32(MaunfacturerYear.Text));
+                        if (plane[i].PlaneID == ManufacturerPlaneID.Text)
+                        {
+                            Manufacturer element = new Manufacturer(
+                                ManufacturerName.Text,
+                                ManufacturerCountry.Text,
+                                Convert.ToInt32(MaunfacturerYear.Text));
 
-                        plane[i].planeManufacturer = element;
+                            plane[i].planeManufacturer = element;
 
-                        ClearForm();
-                        OutputBox.Text += $"{element.ToString()} добавлен/изменен у карточки самолета #{plane[i].PlaneID}" + Environment.NewLine;
+                            ClearForm();
+                            OutputBox.Text += $"{element.ToString()} добавлен/изменен у карточки самолета #{plane[i].PlaneID}" + Environment.NewLine;
+                        }
+
+                        else throw new ArgumentException("Самолета с таким ID нет в стеке!");
                     }
-
-                    else throw new ArgumentException("Самолета с таким ID нет в стеке!");
                 }
+
+                else MessageBox.Show("Проверьте чтобы все поля поля заполнены!");
             }
 
-            else MessageBox.Show("Проверьте чтобы все поля поля заполнены!");
+            else MessageBox.Show("Ошибка: массив с самолетами пустой!");
         }
 
         private void AddCrewMemberButton_Click(object sender, EventArgs e)
         {
-            if (CrewSurname.Text != "" && CrewPosition.Text != "" && CrewAge.Text != "" && CrewWorkExperience.Text != "")
+            if (plane.Length != 0)
             {
-                for (int i = 0; i < plane.Length; i++)
+                if (CrewSurname.Text != "" && CrewPosition.Text != "" && CrewAge.Text != "" && CrewWorkExperience.Text != "")
                 {
-                    if (plane[i].PlaneID == CrewPlaneID.Text)
+                    for (int i = 0; i < plane.Length; i++)
                     {
-                        Crew element = new Crew(
-                            CrewSurname.Text,
-                            CrewPosition.Text,
-                            Convert.ToInt32(CrewAge.Text),
-                            CrewWorkExperience.Text);
+                        if (plane[i].PlaneID == CrewPlaneID.Text)
+                        {
+                            Crew element = new Crew(
+                                CrewSurname.Text,
+                                CrewPosition.Text,
+                                Convert.ToInt32(CrewAge.Text),
+                                CrewWorkExperience.Text);
 
-                        this.planeCrew = this.planeCrew.Append(element).ToArray();
-                        plane[i].planeCrew = planeCrew;
+                            this.planeCrew = this.planeCrew.Append(element).ToArray();
+                            plane[i].planeCrew = planeCrew;
 
-                        ClearForm();
-                        OutputBox.Text += $"{element.ToString()} добавлен в экипаж самолета #{plane[i].PlaneID}" + Environment.NewLine;
+                            ClearForm();
+                            OutputBox.Text += $"{element.ToString()} добавлен в экипаж самолета #{plane[i].PlaneID}" + Environment.NewLine;
+                        }
+                        else throw new ArgumentException("Самолета с таким ID нет в стеке!");
                     }
-                    else throw new ArgumentException("Самолета с таким ID нет в стеке!");
                 }
+
+                else MessageBox.Show("Проверьте чтобы все поля поля заполнены!");
             }
 
-            else MessageBox.Show("Проверьте чтобы все поля поля заполнены!");
+            else MessageBox.Show("Ошибка: массив с самолетами пустой!");
         }
 
         private void ShowInfoButton_Click(object sender, EventArgs e)
         {
-            string showTypeInfo = ShowTypeInfo.Text;
-
-            if (ShowTypeInfo.Text != "" && PlaneIDShowInfo.Text != "")
+            if (plane.Length != 0)
             {
-                for (int i = 0; i < plane.Length; i++)
+                string showTypeInfo = ShowTypeInfo.Text;
+
+                if (ShowTypeInfo.Text != "" && PlaneIDShowInfo.Text != "")
                 {
-                    if (plane[i].PlaneID == PlaneIDShowInfo.Text)
+                    for (int i = 0; i < plane.Length; i++)
                     {
-                        if(showTypeInfo == "самолете")
+                        if (plane[i].PlaneID == PlaneIDShowInfo.Text)
                         {
-                            OutputBox.Text += $"Информация о самолете #{plane[i].PlaneID}:" + Environment.NewLine
-                                + plane[i].ToString() + Environment.NewLine;
+                            if (showTypeInfo == "самолете")
+                            {
+                                OutputBox.Text += $"Информация о самолете #{plane[i].PlaneID}:" + Environment.NewLine
+                                    + plane[i].ToString() + Environment.NewLine;
+                            }
+                            else if (showTypeInfo == "экипаже")
+                            {
+                                OutputBox.Text += $"Информация об экипаже самолета #{plane[i].PlaneID}:" + Environment.NewLine;
+                                for (int j = 0; j < plane[i].planeCrew.Length; j++)
+                                    OutputBox.Text += plane[i].planeCrew[j] + Environment.NewLine;
+                            }
+                            else if (showTypeInfo == "производителе")
+                            {
+                                OutputBox.Text += $"Информация о производителе самолета #{plane[i].PlaneID}:" + Environment.NewLine
+                                    + plane[i].planeManufacturer + Environment.NewLine;
+                            }
                         }
-                        else if(showTypeInfo == "экипаже")
-                        {
-                            OutputBox.Text += $"Информация об экипаже самолета #{plane[i].PlaneID}:" + Environment.NewLine;
-                            for(int j = 0; j < plane[i].planeCrew.Length; j++)
-                                OutputBox.Text += plane[i].planeCrew[j] + Environment.NewLine;
-                        }
-                        else if (showTypeInfo == "производителе")
-                        {
-                            OutputBox.Text += $"Информация о производителе самолета #{plane[i].PlaneID}:" + Environment.NewLine
-                                + plane[i].planeManufacturer + Environment.NewLine;
-                        }
+                        else throw new ArgumentException("Самолета с таким ID нет в стеке!");
                     }
-                    else throw new ArgumentException("Самолета с таким ID нет в стеке!");
                 }
+
+                else MessageBox.Show("Проверьте чтобы все поля поля заполнены!");
             }
 
-            else MessageBox.Show("Проверьте чтобы все поля поля заполнены!");
+            else MessageBox.Show("Ошибка: массив с самолетами пустой!");
         }
 
-        /*private void WriteFileButton_Click(object sender, EventArgs e)
+        private void ShowTypeInfo_SelectedIndexChanged(object sender, EventArgs e) { }
+
+        /*
+        private void WriteFileButton_Click(object sender, EventArgs e)
         {
             DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(PlaneInfo[]));
             using (FileStream fs = new FileStream("bankAccounts.json", FileMode.OpenOrCreate))

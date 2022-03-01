@@ -486,6 +486,7 @@ namespace WindowsFormsApp1
             this.ShowTypeInfo.Name = "ShowTypeInfo";
             this.ShowTypeInfo.Size = new System.Drawing.Size(126, 21);
             this.ShowTypeInfo.TabIndex = 47;
+            this.ShowTypeInfo.SelectedIndexChanged += new System.EventHandler(this.ShowTypeInfo_SelectedIndexChanged);
             // 
             // label5
             // 
