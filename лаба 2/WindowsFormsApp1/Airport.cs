@@ -201,16 +201,5 @@ namespace WindowsFormsApp1
         }
 
         private void ShowTypeInfo_SelectedIndexChanged(object sender, EventArgs e) { }
-
-        /*
-        private void WriteFileButton_Click(object sender, EventArgs e)
-        {
-            DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(PlaneInfo[]));
-            using (FileStream fs = new FileStream("bankAccounts.json", FileMode.OpenOrCreate))
-            {
-                serializer.WriteObject(fs, this.plane);
-            }
-        }
-        */
     }
 }

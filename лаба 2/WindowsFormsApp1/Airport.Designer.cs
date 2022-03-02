@@ -73,6 +73,7 @@ namespace WindowsFormsApp1
             this.label5 = new System.Windows.Forms.Label();
             this.PlaneIDShowInfo = new System.Windows.Forms.TextBox();
             this.ShowInfoButton = new System.Windows.Forms.Button();
+            this.SearchFormButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PlaneCapacityNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CrewAge)).BeginInit();
             this.ModelPanel.SuspendLayout();
@@ -104,7 +105,7 @@ namespace WindowsFormsApp1
             "Пассажирский",
             "Грузовой",
             "Военный"});
-            this.PlaneTypeComboBox.Location = new System.Drawing.Point(15, 65);
+            this.PlaneTypeComboBox.Location = new System.Drawing.Point(15, 64);
             this.PlaneTypeComboBox.Name = "PlaneTypeComboBox";
             this.PlaneTypeComboBox.Size = new System.Drawing.Size(126, 21);
             this.PlaneTypeComboBox.TabIndex = 2;
@@ -423,15 +424,15 @@ namespace WindowsFormsApp1
             // 
             // OutputBox
             // 
-            this.OutputBox.Location = new System.Drawing.Point(20, 357);
+            this.OutputBox.Location = new System.Drawing.Point(20, 407);
             this.OutputBox.Multiline = true;
             this.OutputBox.Name = "OutputBox";
-            this.OutputBox.Size = new System.Drawing.Size(606, 307);
+            this.OutputBox.Size = new System.Drawing.Size(606, 257);
             this.OutputBox.TabIndex = 40;
             // 
             // ResetBoxButton
             // 
-            this.ResetBoxButton.Location = new System.Drawing.Point(19, 327);
+            this.ResetBoxButton.Location = new System.Drawing.Point(19, 371);
             this.ResetBoxButton.Name = "ResetBoxButton";
             this.ResetBoxButton.Size = new System.Drawing.Size(122, 24);
             this.ResetBoxButton.TabIndex = 43;
@@ -464,7 +465,7 @@ namespace WindowsFormsApp1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(227, 330);
+            this.label4.Location = new System.Drawing.Point(227, 374);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 13);
             this.label4.TabIndex = 46;
@@ -482,7 +483,7 @@ namespace WindowsFormsApp1
             "самолете",
             "экипаже",
             "производителе"});
-            this.ShowTypeInfo.Location = new System.Drawing.Point(321, 327);
+            this.ShowTypeInfo.Location = new System.Drawing.Point(321, 371);
             this.ShowTypeInfo.Name = "ShowTypeInfo";
             this.ShowTypeInfo.Size = new System.Drawing.Size(126, 21);
             this.ShowTypeInfo.TabIndex = 47;
@@ -491,7 +492,7 @@ namespace WindowsFormsApp1
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(453, 330);
+            this.label5.Location = new System.Drawing.Point(453, 374);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(24, 13);
             this.label5.TabIndex = 48;
@@ -499,14 +500,14 @@ namespace WindowsFormsApp1
             // 
             // PlaneIDShowInfo
             // 
-            this.PlaneIDShowInfo.Location = new System.Drawing.Point(483, 328);
+            this.PlaneIDShowInfo.Location = new System.Drawing.Point(483, 372);
             this.PlaneIDShowInfo.Name = "PlaneIDShowInfo";
             this.PlaneIDShowInfo.Size = new System.Drawing.Size(51, 20);
             this.PlaneIDShowInfo.TabIndex = 49;
             // 
             // ShowInfoButton
             // 
-            this.ShowInfoButton.Location = new System.Drawing.Point(540, 328);
+            this.ShowInfoButton.Location = new System.Drawing.Point(540, 372);
             this.ShowInfoButton.Name = "ShowInfoButton";
             this.ShowInfoButton.Size = new System.Drawing.Size(86, 20);
             this.ShowInfoButton.TabIndex = 50;
@@ -514,11 +515,21 @@ namespace WindowsFormsApp1
             this.ShowInfoButton.UseVisualStyleBackColor = true;
             this.ShowInfoButton.Click += new System.EventHandler(this.ShowInfoButton_Click);
             // 
+            // SearchFormButton
+            // 
+            this.SearchFormButton.Location = new System.Drawing.Point(20, 332);
+            this.SearchFormButton.Name = "SearchFormButton";
+            this.SearchFormButton.Size = new System.Drawing.Size(121, 33);
+            this.SearchFormButton.TabIndex = 51;
+            this.SearchFormButton.Text = "Форма для поиска";
+            this.SearchFormButton.UseVisualStyleBackColor = true;
+            // 
             // Airport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 676);
+            this.ClientSize = new System.Drawing.Size(636, 676);
+            this.Controls.Add(this.SearchFormButton);
             this.Controls.Add(this.ShowInfoButton);
             this.Controls.Add(this.PlaneIDShowInfo);
             this.Controls.Add(this.label5);
@@ -619,6 +630,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox PlaneIDShowInfo;
         private System.Windows.Forms.Button ShowInfoButton;
+        private System.Windows.Forms.Button SearchFormButton;
     }
 }
 
