@@ -10,12 +10,13 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Json;
+using WindowsFormsApp1.SearchFormFolder;
 
 namespace WindowsFormsApp1
 {
     public partial class Airport : Form
     {
-        private PlaneInfo[] plane = new PlaneInfo[] { };
+        public PlaneInfo[] plane = new PlaneInfo[] { };
         public Crew[] planeCrew = new Crew[] { };
         private string ModelPlane;
 
@@ -201,5 +202,12 @@ namespace WindowsFormsApp1
         }
 
         private void ShowTypeInfo_SelectedIndexChanged(object sender, EventArgs e) { }
+
+        private void SearchFormButton_Click(object sender, EventArgs e)
+        {
+            SearchForm SearchForm = new SearchForm();
+            SearchForm.Plane = plane;
+            SearchForm.Show();
+        }
     }
 }

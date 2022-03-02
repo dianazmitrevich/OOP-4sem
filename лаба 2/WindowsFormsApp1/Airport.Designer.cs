@@ -523,6 +523,7 @@ namespace WindowsFormsApp1
             this.SearchFormButton.TabIndex = 51;
             this.SearchFormButton.Text = "Форма для поиска";
             this.SearchFormButton.UseVisualStyleBackColor = true;
+            this.SearchFormButton.Click += new System.EventHandler(this.SearchFormButton_Click);
             // 
             // Airport
             // 
