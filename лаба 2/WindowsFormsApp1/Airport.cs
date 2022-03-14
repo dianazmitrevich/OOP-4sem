@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
         public PlaneInfo[] plane = new PlaneInfo[] { };
         public Crew[] planeCrew = new Crew[] { };
         private string ModelPlane;
+        public bool isFormvisible = false;
 
         public Airport()
         {
@@ -207,7 +208,13 @@ namespace WindowsFormsApp1
         {
             SearchForm SearchForm = new SearchForm();
             SearchForm.Plane = plane;
-            SearchForm.Show();
+
+            if (isFormvisible == true)
+            {
+                SearchForm.Show();
+            }
+
+            isFormvisible = true;
         }
     }
 }

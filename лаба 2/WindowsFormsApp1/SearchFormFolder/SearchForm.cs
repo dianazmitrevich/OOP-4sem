@@ -26,7 +26,33 @@ namespace WindowsFormsApp1.SearchFormFolder
 
         private void SearchFormButton_Click(object sender, EventArgs e)
         {
-            if (Plane.Length != 0) { }
+            if (Plane.Length != 0)
+            {
+                if (SFname.Text != "")
+                {
+                    for (int i = 0; i < Plane.Length; i++)
+                    {
+                        if (SFname.Text == Plane[i].PlaneID)
+                        {
+                            SearchFormResult.Text += $"Информация по поиску самолета с названием (id) #{SFname.Text}:" + Environment.NewLine +
+                                Plane[i].ToString();
+                        }
+                        else SearchFormResult.Text += "По запросу не было найдено информации!" + Environment.NewLine;
+                    }
+                }
+                else if (SFtype.Text != "")
+                {
+                    for (int i = 0; i < Plane.Length; i++)
+                    {
+                        if (SFtype.Text == Plane[i].PlaneType)
+                        {
+                            SearchFormResult.Text += $"Информация по поиску самолета типа '{SFname.Text}':" + Environment.NewLine +
+                                Plane[i].ToString();
+                        }
+                        else SearchFormResult.Text += "По запросу не было найдено информации!" + Environment.NewLine;
+                    }
+                }
+            }
             else MessageBox.Show("Ошибка: массив с самолетами пустой!");
         }
     }
