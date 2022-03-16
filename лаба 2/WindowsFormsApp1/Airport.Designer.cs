@@ -79,21 +79,24 @@ namespace WindowsFormsApp1
             this.моделиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.количествуМестToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сортировкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поДатеТОToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.PlaneCapacityNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CrewAge)).BeginInit();
             this.ModelPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(13, 45);
+            this.label1.Location = new System.Drawing.Point(13, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 16);
             this.label1.TabIndex = 0;
@@ -101,7 +104,7 @@ namespace WindowsFormsApp1
             // 
             // PlaneIDTextBox
             // 
-            this.PlaneIDTextBox.Location = new System.Drawing.Point(106, 44);
+            this.PlaneIDTextBox.Location = new System.Drawing.Point(106, 55);
             this.PlaneIDTextBox.Name = "PlaneIDTextBox";
             this.PlaneIDTextBox.Size = new System.Drawing.Size(51, 20);
             this.PlaneIDTextBox.TabIndex = 1;
@@ -115,7 +118,7 @@ namespace WindowsFormsApp1
             "Пассажирский",
             "Грузовой",
             "Военный"});
-            this.PlaneTypeComboBox.Location = new System.Drawing.Point(16, 100);
+            this.PlaneTypeComboBox.Location = new System.Drawing.Point(16, 111);
             this.PlaneTypeComboBox.Name = "PlaneTypeComboBox";
             this.PlaneTypeComboBox.Size = new System.Drawing.Size(126, 21);
             this.PlaneTypeComboBox.TabIndex = 2;
@@ -124,7 +127,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 78);
+            this.label2.Location = new System.Drawing.Point(13, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 13);
             this.label2.TabIndex = 3;
@@ -133,7 +136,7 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(168, 78);
+            this.label3.Location = new System.Drawing.Point(168, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 2;
@@ -166,7 +169,7 @@ namespace WindowsFormsApp1
             // PlaneLoadCapacityCheckbox
             // 
             this.PlaneLoadCapacityCheckbox.AutoSize = true;
-            this.PlaneLoadCapacityCheckbox.Location = new System.Drawing.Point(16, 181);
+            this.PlaneLoadCapacityCheckbox.Location = new System.Drawing.Point(16, 192);
             this.PlaneLoadCapacityCheckbox.Name = "PlaneLoadCapacityCheckbox";
             this.PlaneLoadCapacityCheckbox.Size = new System.Drawing.Size(107, 13);
             this.PlaneLoadCapacityCheckbox.TabIndex = 7;
@@ -175,7 +178,7 @@ namespace WindowsFormsApp1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 253);
+            this.label6.Location = new System.Drawing.Point(16, 264);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 13);
             this.label6.TabIndex = 11;
@@ -183,7 +186,7 @@ namespace WindowsFormsApp1
             // 
             // PlaneYearMaskedTextBox
             // 
-            this.PlaneYearMaskedTextBox.Location = new System.Drawing.Point(19, 269);
+            this.PlaneYearMaskedTextBox.Location = new System.Drawing.Point(19, 280);
             this.PlaneYearMaskedTextBox.Mask = "0000";
             this.PlaneYearMaskedTextBox.Name = "PlaneYearMaskedTextBox";
             this.PlaneYearMaskedTextBox.Size = new System.Drawing.Size(104, 20);
@@ -194,7 +197,7 @@ namespace WindowsFormsApp1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(127, 253);
+            this.label7.Location = new System.Drawing.Point(127, 264);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 13);
             this.label7.TabIndex = 13;
@@ -202,7 +205,7 @@ namespace WindowsFormsApp1
             // 
             // PlaneDateService
             // 
-            this.PlaneDateService.Location = new System.Drawing.Point(130, 268);
+            this.PlaneDateService.Location = new System.Drawing.Point(130, 279);
             this.PlaneDateService.Name = "PlaneDateService";
             this.PlaneDateService.Size = new System.Drawing.Size(162, 20);
             this.PlaneDateService.TabIndex = 14;
@@ -210,7 +213,7 @@ namespace WindowsFormsApp1
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 144);
+            this.label8.Location = new System.Drawing.Point(16, 155);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(135, 13);
             this.label8.TabIndex = 15;
@@ -223,7 +226,7 @@ namespace WindowsFormsApp1
             0,
             0,
             0});
-            this.PlaneCapacityNumeric.Location = new System.Drawing.Point(158, 144);
+            this.PlaneCapacityNumeric.Location = new System.Drawing.Point(158, 155);
             this.PlaneCapacityNumeric.Minimum = new decimal(new int[] {
             10,
             0,
@@ -241,7 +244,7 @@ namespace WindowsFormsApp1
             // 
             // AddPlaneButton
             // 
-            this.AddPlaneButton.Location = new System.Drawing.Point(168, 44);
+            this.AddPlaneButton.Location = new System.Drawing.Point(168, 55);
             this.AddPlaneButton.Name = "AddPlaneButton";
             this.AddPlaneButton.Size = new System.Drawing.Size(124, 20);
             this.AddPlaneButton.TabIndex = 18;
@@ -253,7 +256,7 @@ namespace WindowsFormsApp1
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(350, 44);
+            this.label9.Location = new System.Drawing.Point(350, 55);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(167, 16);
             this.label9.TabIndex = 19;
@@ -261,14 +264,14 @@ namespace WindowsFormsApp1
             // 
             // CrewPlaneID
             // 
-            this.CrewPlaneID.Location = new System.Drawing.Point(505, 43);
+            this.CrewPlaneID.Location = new System.Drawing.Point(505, 54);
             this.CrewPlaneID.Name = "CrewPlaneID";
             this.CrewPlaneID.Size = new System.Drawing.Size(51, 20);
             this.CrewPlaneID.TabIndex = 20;
             // 
             // AddCrewMemberButton
             // 
-            this.AddCrewMemberButton.Location = new System.Drawing.Point(562, 43);
+            this.AddCrewMemberButton.Location = new System.Drawing.Point(562, 54);
             this.AddCrewMemberButton.Name = "AddCrewMemberButton";
             this.AddCrewMemberButton.Size = new System.Drawing.Size(64, 20);
             this.AddCrewMemberButton.TabIndex = 21;
@@ -278,7 +281,7 @@ namespace WindowsFormsApp1
             // 
             // CrewSurname
             // 
-            this.CrewSurname.Location = new System.Drawing.Point(421, 77);
+            this.CrewSurname.Location = new System.Drawing.Point(421, 88);
             this.CrewSurname.Name = "CrewSurname";
             this.CrewSurname.Size = new System.Drawing.Size(205, 20);
             this.CrewSurname.TabIndex = 22;
@@ -286,7 +289,7 @@ namespace WindowsFormsApp1
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(350, 80);
+            this.label10.Location = new System.Drawing.Point(350, 91);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 13);
             this.label10.TabIndex = 23;
@@ -295,7 +298,7 @@ namespace WindowsFormsApp1
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(350, 109);
+            this.label11.Location = new System.Drawing.Point(350, 120);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 13);
             this.label11.TabIndex = 24;
@@ -304,7 +307,7 @@ namespace WindowsFormsApp1
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(359, 139);
+            this.label12.Location = new System.Drawing.Point(359, 150);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 13);
             this.label12.TabIndex = 26;
@@ -312,7 +315,7 @@ namespace WindowsFormsApp1
             // 
             // CrewAge
             // 
-            this.CrewAge.Location = new System.Drawing.Point(353, 155);
+            this.CrewAge.Location = new System.Drawing.Point(353, 166);
             this.CrewAge.Minimum = new decimal(new int[] {
             18,
             0,
@@ -330,7 +333,7 @@ namespace WindowsFormsApp1
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(436, 139);
+            this.label13.Location = new System.Drawing.Point(436, 150);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(33, 13);
             this.label13.TabIndex = 28;
@@ -338,7 +341,7 @@ namespace WindowsFormsApp1
             // 
             // CrewWorkExperience
             // 
-            this.CrewWorkExperience.Location = new System.Drawing.Point(439, 155);
+            this.CrewWorkExperience.Location = new System.Drawing.Point(439, 166);
             this.CrewWorkExperience.Name = "CrewWorkExperience";
             this.CrewWorkExperience.Size = new System.Drawing.Size(187, 20);
             this.CrewWorkExperience.TabIndex = 29;
@@ -350,7 +353,7 @@ namespace WindowsFormsApp1
             this.CrewPosition.Items.AddRange(new object[] {
             "Пилот",
             "Стюард"});
-            this.CrewPosition.Location = new System.Drawing.Point(421, 106);
+            this.CrewPosition.Location = new System.Drawing.Point(421, 117);
             this.CrewPosition.Name = "CrewPosition";
             this.CrewPosition.Size = new System.Drawing.Size(205, 21);
             this.CrewPosition.TabIndex = 30;
@@ -359,7 +362,7 @@ namespace WindowsFormsApp1
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(350, 221);
+            this.label14.Location = new System.Drawing.Point(350, 232);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(115, 32);
             this.label14.TabIndex = 31;
@@ -367,14 +370,14 @@ namespace WindowsFormsApp1
             // 
             // ManufacturerPlaneID
             // 
-            this.ManufacturerPlaneID.Location = new System.Drawing.Point(471, 221);
+            this.ManufacturerPlaneID.Location = new System.Drawing.Point(471, 232);
             this.ManufacturerPlaneID.Name = "ManufacturerPlaneID";
             this.ManufacturerPlaneID.Size = new System.Drawing.Size(51, 20);
             this.ManufacturerPlaneID.TabIndex = 32;
             // 
             // AddManufacturerButton
             // 
-            this.AddManufacturerButton.Location = new System.Drawing.Point(528, 221);
+            this.AddManufacturerButton.Location = new System.Drawing.Point(528, 232);
             this.AddManufacturerButton.Name = "AddManufacturerButton";
             this.AddManufacturerButton.Size = new System.Drawing.Size(98, 20);
             this.AddManufacturerButton.TabIndex = 33;
@@ -385,7 +388,7 @@ namespace WindowsFormsApp1
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(350, 271);
+            this.label15.Location = new System.Drawing.Point(350, 282);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(57, 13);
             this.label15.TabIndex = 35;
@@ -393,7 +396,7 @@ namespace WindowsFormsApp1
             // 
             // ManufacturerName
             // 
-            this.ManufacturerName.Location = new System.Drawing.Point(438, 268);
+            this.ManufacturerName.Location = new System.Drawing.Point(438, 279);
             this.ManufacturerName.Name = "ManufacturerName";
             this.ManufacturerName.Size = new System.Drawing.Size(188, 20);
             this.ManufacturerName.TabIndex = 34;
@@ -401,7 +404,7 @@ namespace WindowsFormsApp1
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(351, 297);
+            this.label16.Location = new System.Drawing.Point(351, 308);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(43, 13);
             this.label16.TabIndex = 37;
@@ -409,14 +412,14 @@ namespace WindowsFormsApp1
             // 
             // ManufacturerCountry
             // 
-            this.ManufacturerCountry.Location = new System.Drawing.Point(438, 294);
+            this.ManufacturerCountry.Location = new System.Drawing.Point(438, 305);
             this.ManufacturerCountry.Name = "ManufacturerCountry";
             this.ManufacturerCountry.Size = new System.Drawing.Size(189, 20);
             this.ManufacturerCountry.TabIndex = 36;
             // 
             // MaunfacturerYear
             // 
-            this.MaunfacturerYear.Location = new System.Drawing.Point(438, 320);
+            this.MaunfacturerYear.Location = new System.Drawing.Point(438, 331);
             this.MaunfacturerYear.Mask = "0000";
             this.MaunfacturerYear.Name = "MaunfacturerYear";
             this.MaunfacturerYear.Size = new System.Drawing.Size(189, 20);
@@ -426,7 +429,7 @@ namespace WindowsFormsApp1
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(350, 323);
+            this.label17.Location = new System.Drawing.Point(350, 334);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(82, 13);
             this.label17.TabIndex = 38;
@@ -454,7 +457,7 @@ namespace WindowsFormsApp1
             // 
             this.ModelPanel.Controls.Add(this.RadioButtonAirbusOption);
             this.ModelPanel.Controls.Add(this.RadioButtonBoeingOption);
-            this.ModelPanel.Location = new System.Drawing.Point(158, 90);
+            this.ModelPanel.Location = new System.Drawing.Point(158, 101);
             this.ModelPanel.Name = "ModelPanel";
             this.ModelPanel.Size = new System.Drawing.Size(144, 37);
             this.ModelPanel.TabIndex = 44;
@@ -466,7 +469,7 @@ namespace WindowsFormsApp1
             "1т",
             "2т",
             "10т"});
-            this.LoadCapacityCkeckbox.Location = new System.Drawing.Point(19, 197);
+            this.LoadCapacityCkeckbox.Location = new System.Drawing.Point(19, 208);
             this.LoadCapacityCkeckbox.Name = "LoadCapacityCkeckbox";
             this.LoadCapacityCkeckbox.Size = new System.Drawing.Size(273, 49);
             this.LoadCapacityCkeckbox.TabIndex = 45;
@@ -551,21 +554,21 @@ namespace WindowsFormsApp1
             // типуToolStripMenuItem
             // 
             this.типуToolStripMenuItem.Name = "типуToolStripMenuItem";
-            this.типуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.типуToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.типуToolStripMenuItem.Text = "типу";
             this.типуToolStripMenuItem.Click += new System.EventHandler(this.типуToolStripMenuItem_Click);
             // 
             // моделиToolStripMenuItem
             // 
             this.моделиToolStripMenuItem.Name = "моделиToolStripMenuItem";
-            this.моделиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.моделиToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.моделиToolStripMenuItem.Text = "модели";
             this.моделиToolStripMenuItem.Click += new System.EventHandler(this.моделиToolStripMenuItem_Click);
             // 
             // количествуМестToolStripMenuItem
             // 
             this.количествуМестToolStripMenuItem.Name = "количествуМестToolStripMenuItem";
-            this.количествуМестToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.количествуМестToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.количествуМестToolStripMenuItem.Text = "количеству мест";
             this.количествуМестToolStripMenuItem.Click += new System.EventHandler(this.количествуМестToolStripMenuItem_Click);
             // 
@@ -578,26 +581,26 @@ namespace WindowsFormsApp1
             this.сортировкаToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.сортировкаToolStripMenuItem.Text = "Сортировка";
             // 
-            // сохранитьToolStripMenuItem
-            // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
-            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
-            // 
             // поIDToolStripMenuItem
             // 
             this.поIDToolStripMenuItem.Name = "поIDToolStripMenuItem";
-            this.поIDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поIDToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.поIDToolStripMenuItem.Text = "по ID";
             this.поIDToolStripMenuItem.Click += new System.EventHandler(this.поIDToolStripMenuItem_Click);
             // 
             // поДатеТОToolStripMenuItem
             // 
             this.поДатеТОToolStripMenuItem.Name = "поДатеТОToolStripMenuItem";
-            this.поДатеТОToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поДатеТОToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.поДатеТОToolStripMenuItem.Text = "по дате ТО";
             this.поДатеТОToolStripMenuItem.Click += new System.EventHandler(this.поДатеТОToolStripMenuItem_Click);
+            // 
+            // сохранитьToolStripMenuItem
+            // 
+            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
@@ -606,11 +609,31 @@ namespace WindowsFormsApp1
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 654);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(636, 22);
+            this.statusStrip1.TabIndex = 52;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(106, 17);
+            this.toolStripStatusLabel1.Text = "Строка состояния";
+            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            // 
             // Airport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 676);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ShowInfoButton);
             this.Controls.Add(this.PlaneIDShowInfo);
             this.Controls.Add(this.label5);
@@ -664,6 +687,8 @@ namespace WindowsFormsApp1
             this.ModelPanel.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -725,6 +750,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem поIDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поДатеТОToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

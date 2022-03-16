@@ -269,5 +269,10 @@ namespace WindowsFormsApp1
         {
             MessageBox.Show("Версия 1.2022. Разработчик Диана");
         }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Время - " + DateTime.Now.ToString() + " | Кол-во самолетов в стеке - " + plane.Length;
+        }
     }
 }
