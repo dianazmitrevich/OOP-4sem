@@ -82,6 +82,7 @@ namespace WindowsFormsApp1
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поДатеТОToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.PlaneCapacityNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CrewAge)).BeginInit();
             this.ModelPanel.SuspendLayout();
@@ -529,7 +530,8 @@ namespace WindowsFormsApp1
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.поискПоToolStripMenuItem,
             this.сортировкаToolStripMenuItem,
-            this.сохранитьToolStripMenuItem});
+            this.сохранитьToolStripMenuItem,
+            this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(636, 24);
@@ -596,6 +598,13 @@ namespace WindowsFormsApp1
             this.поДатеТОToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.поДатеТОToolStripMenuItem.Text = "по дате ТО";
             this.поДатеТОToolStripMenuItem.Click += new System.EventHandler(this.поДатеТОToolStripMenuItem_Click);
+            // 
+            // оПрограммеToolStripMenuItem
+            // 
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // Airport
             // 
@@ -715,6 +724,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поIDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поДатеТОToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
     }
 }
 

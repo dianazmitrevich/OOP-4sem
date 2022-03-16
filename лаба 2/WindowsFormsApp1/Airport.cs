@@ -264,5 +264,10 @@ namespace WindowsFormsApp1
             }
             MessageBox.Show(str.ToString());
         }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Версия 1.2022. Разработчик Диана");
+        }
     }
 }
