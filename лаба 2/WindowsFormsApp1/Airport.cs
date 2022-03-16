@@ -230,5 +230,39 @@ namespace WindowsFormsApp1
             searchForm.planeArray = plane;
             searchForm.Show();
         }
+
+        private void поIDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (plane.Length == 0)
+            {
+                throw new Exception("Стек самолетов пустой!");
+            }
+            var idSort = from element in plane
+                         orderby element.PlaneID
+                         select element;
+            StringBuilder str = new StringBuilder();
+            foreach (PlaneInfo i in idSort)
+            {
+                str.Append(Convert.ToString(i.PlaneID) + "\n");
+            }
+            MessageBox.Show(str.ToString());
+        }
+
+        private void поДатеТОToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (plane.Length == 0)
+            {
+                throw new Exception("Стек самолетов пустой!");
+            }
+            var idSort = from element in plane
+                         orderby element.PlaneTO
+                         select element;
+            StringBuilder str = new StringBuilder();
+            foreach (PlaneInfo i in idSort)
+            {
+                str.Append(Convert.ToString(i.PlaneID) + ' ' + Convert.ToString(i.PlaneTO) + "\n");
+            }
+            MessageBox.Show(str.ToString());
+        }
     }
 }

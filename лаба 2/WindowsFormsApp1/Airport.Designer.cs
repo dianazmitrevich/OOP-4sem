@@ -80,6 +80,8 @@ namespace WindowsFormsApp1
             this.количествуМестToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сортировкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поДатеТОToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.PlaneCapacityNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CrewAge)).BeginInit();
             this.ModelPanel.SuspendLayout();
@@ -567,6 +569,9 @@ namespace WindowsFormsApp1
             // 
             // сортировкаToolStripMenuItem
             // 
+            this.сортировкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.поIDToolStripMenuItem,
+            this.поДатеТОToolStripMenuItem});
             this.сортировкаToolStripMenuItem.Name = "сортировкаToolStripMenuItem";
             this.сортировкаToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.сортировкаToolStripMenuItem.Text = "Сортировка";
@@ -577,6 +582,20 @@ namespace WindowsFormsApp1
             this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
+            // 
+            // поIDToolStripMenuItem
+            // 
+            this.поIDToolStripMenuItem.Name = "поIDToolStripMenuItem";
+            this.поIDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поIDToolStripMenuItem.Text = "по ID";
+            this.поIDToolStripMenuItem.Click += new System.EventHandler(this.поIDToolStripMenuItem_Click);
+            // 
+            // поДатеТОToolStripMenuItem
+            // 
+            this.поДатеТОToolStripMenuItem.Name = "поДатеТОToolStripMenuItem";
+            this.поДатеТОToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поДатеТОToolStripMenuItem.Text = "по дате ТО";
+            this.поДатеТОToolStripMenuItem.Click += new System.EventHandler(this.поДатеТОToolStripMenuItem_Click);
             // 
             // Airport
             // 
@@ -694,6 +713,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem количествуМестToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сортировкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem поIDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem поДатеТОToolStripMenuItem;
     }
 }
 
