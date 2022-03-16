@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Json;
-using WindowsFormsApp1.SearchFormFolder;
+using System.Xml.Serialization;
 
 namespace WindowsFormsApp1
 {
@@ -19,7 +19,8 @@ namespace WindowsFormsApp1
         public PlaneInfo[] plane = new PlaneInfo[] { };
         public Crew[] planeCrew = new Crew[] { };
         private string ModelPlane;
-        public bool isFormvisible = false;
+
+        public PlaneInfo[] result = new PlaneInfo[] { };
 
         public Airport()
         {
@@ -204,17 +205,30 @@ namespace WindowsFormsApp1
 
         private void ShowTypeInfo_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        private void SearchFormButton_Click(object sender, EventArgs e)
+        private void типуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SearchForm SearchForm = new SearchForm();
-            SearchForm.Plane = plane;
+            TypeSearchForm searchForm = new TypeSearchForm();
+            searchForm.planeArray = plane;
+            searchForm.Show();
+        }
 
-            if (isFormvisible == true)
-            {
-                SearchForm.Show();
-            }
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Данные были сохранены в файл!");
+        }
 
-            isFormvisible = true;
+        private void моделиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModelSearchForm searchForm = new ModelSearchForm();
+            searchForm.planeArray = plane;
+            searchForm.Show();
+        }
+
+        private void количествуМестToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CapacitySearchForm searchForm = new CapacitySearchForm();
+            searchForm.planeArray = plane;
+            searchForm.Show();
         }
     }
 }

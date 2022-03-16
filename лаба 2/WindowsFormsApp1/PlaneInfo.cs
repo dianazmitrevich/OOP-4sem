@@ -8,14 +8,13 @@ using System.Runtime.Serialization;
 namespace WindowsFormsApp1
 {
     [Serializable]
-    [DataContract]
 
     public class PlaneInfo
     {
-        [DataMember] public string PlaneModel, PlaneCapacity, PlaneLoadCapacity, PlaneYear;
-        [DataMember] private string planeID , planeType;
-        [DataMember] public Crew[] planeCrew = new Crew[] { };
-        [DataMember] public DateTimeOffset PlaneTO;
+        public string PlaneModel, PlaneCapacity, PlaneLoadCapacity, PlaneYear;
+        private string planeID , planeType;
+        public Crew[] planeCrew = new Crew[] { };
+        public DateTimeOffset PlaneTO;
 
         public string PlaneID
         {
