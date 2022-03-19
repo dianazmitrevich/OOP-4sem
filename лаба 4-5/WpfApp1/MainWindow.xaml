@@ -33,14 +33,14 @@
                     <TextBlock TextDecorations="Underline">U</TextBlock>
                 </ToggleButton>
                 <Separator Margin="4" />
-                <ComboBox Padding="4 0 20 0" Name="FontFamily">
-                    <ComboBoxItem IsSelected="True">Arial</ComboBoxItem>
-                    <ComboBoxItem>Calibri</ComboBoxItem>
-                    <ComboBoxItem>Cambria</ComboBoxItem>
-                    <ComboBoxItem>Consolas</ComboBoxItem>
-                    <ComboBoxItem>Segoe UI</ComboBoxItem>
+                <ComboBox Padding="4 0 20 0" Name="FontFamily" SelectionChanged="FontFamily_SelectionChanged">
+                    <ComboBoxItem FontFamily="Arial" IsSelected="True">Arial</ComboBoxItem>
+                    <ComboBoxItem FontFamily="Calibri">Calibri</ComboBoxItem>
+                    <ComboBoxItem FontFamily="Cambria">Cambria</ComboBoxItem>
+                    <ComboBoxItem FontFamily="Consolas">Consolas</ComboBoxItem>
+                    <ComboBoxItem FontFamily="Segoe UI">Segoe UI</ComboBoxItem>
                 </ComboBox>
-                <ComboBox Padding="4 0 20 0" Name="FontSize">
+                <ComboBox Padding="4 0 20 0" Name="FontSize" SelectionChanged="FontSize_SelectionChanged">
                     <ComboBoxItem>8</ComboBoxItem>
                     <ComboBoxItem>10</ComboBoxItem>
                     <ComboBoxItem>12</ComboBoxItem>
@@ -55,7 +55,7 @@
                     <ComboBoxItem>42</ComboBoxItem>
                     <ComboBoxItem>48</ComboBoxItem>
                 </ComboBox>
-                <ComboBox Padding="4 0 20 0" Name="FontColor">
+                <ComboBox Padding="4 0 20 0" Name="FontColor" SelectionChanged="FontColor_SelectionChanged">
                     <ComboBoxItem IsSelected="True">
                         <TextBlock>
                             <Rectangle Fill="Black" Height="10" Width="25"></Rectangle>

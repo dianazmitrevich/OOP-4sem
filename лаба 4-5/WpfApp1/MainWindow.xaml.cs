@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,37 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ChangeSelectedText(DependencyProperty d, object value)
+        {
+            var selection = WorkField.Selection;
+            if (!selection.IsEmpty)
+                selection.ApplyPropertyValue(d, value);
+        }
+        private void FontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (WorkField != null)
+            {
+                string selectedItem = FontFamily.SelectedItem.ToString();
+                ChangeSelectedText(TextElement.FontFamilyProperty, new FontFamily(Regex.Replace(selectedItem.Trim(), @".*:\s+", "")));
+            }
+        }
+        private void FontSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (WorkField != null)
+            {
+                string selectedItem = FontSize.SelectedItem.ToString();
+                ChangeSelectedText(TextElement.FontSizeProperty, Regex.Replace(selectedItem.Trim(), @".*:\s+", ""));
+            }
+        }
+        private void FontColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (WorkField != null)
+            {
+                string selectedItem = FontColor.SelectedItem.ToString();
+                ChangeSelectedText(TextElement.ForegroundProperty, Regex.Replace(selectedItem.Trim(), @".*:\s+", ""));
+            }
         }
     }
 }
