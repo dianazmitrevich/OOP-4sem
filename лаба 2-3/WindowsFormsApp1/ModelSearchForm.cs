@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
         {
             textBox2.Clear();
 
-            if (Regex.IsMatch(textBox1.Text, @"A+"))
+            if (Regex.IsMatch(textBox1.Text, @"s$"))
             {
                 foreach (PlaneInfo i in planeArray)
                 {

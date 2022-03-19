@@ -1,0 +1,106 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Menu Height="24" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <MenuItem Header="File" Height="24">
+                <MenuItem Header="New" />
+                <MenuItem Header="Save" />
+                <MenuItem Header="Open" />
+            </MenuItem>
+            <MenuItem Header="Edit" >
+                <MenuItem Header="Copy" />
+                <MenuItem Header="Paste" />
+            </MenuItem>
+        </Menu>
+        <ToolBarTray Height="24" VerticalAlignment="Top" Margin="0,24,0,0">
+            <ToolBar Height="24" Width="auto" Margin="0,0,-1000,558" Header="&#xD;&#xA;">
+                <Button x:Name="_Undo" ToolTip="Undo">
+                    <Image Source="C:\Users\diana\Desktop\OOP-4sem\лаба 4-5\back.png" Height="13" Width="14" />
+                </Button>
+                <Button x:Name="_Redo" ToolTip="Redo">
+                    <Image Source="C:\Users\diana\Desktop\OOP-4sem\лаба 4-5\forward.png" Height="13" Width="14" />
+                </Button>
+                <Separator Margin="4" />
+                <ToggleButton Padding="4 0 4 0">B</ToggleButton>
+                <ToggleButton Padding="4 0 4 0" FontStyle="Italic">I</ToggleButton>
+                <ToggleButton Padding="4 0 4 0">
+                    <TextBlock TextDecorations="Underline">U</TextBlock>
+                </ToggleButton>
+                <Separator Margin="4" />
+                <ComboBox Padding="4 0 20 0" Name="FontFamily">
+                    <ComboBoxItem IsSelected="True">Arial</ComboBoxItem>
+                    <ComboBoxItem>Calibri</ComboBoxItem>
+                    <ComboBoxItem>Cambria</ComboBoxItem>
+                    <ComboBoxItem>Consolas</ComboBoxItem>
+                    <ComboBoxItem>Segoe UI</ComboBoxItem>
+                </ComboBox>
+                <ComboBox Padding="4 0 20 0" Name="FontSize">
+                    <ComboBoxItem>8</ComboBoxItem>
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem>12</ComboBoxItem>
+                    <ComboBoxItem IsSelected="True">14</ComboBoxItem>
+                    <ComboBoxItem>16</ComboBoxItem>
+                    <ComboBoxItem>18</ComboBoxItem>
+                    <ComboBoxItem>20</ComboBoxItem>
+                    <ComboBoxItem>24</ComboBoxItem>
+                    <ComboBoxItem>28</ComboBoxItem>
+                    <ComboBoxItem>32</ComboBoxItem>
+                    <ComboBoxItem>36</ComboBoxItem>
+                    <ComboBoxItem>42</ComboBoxItem>
+                    <ComboBoxItem>48</ComboBoxItem>
+                </ComboBox>
+                <ComboBox Padding="4 0 20 0" Name="FontColor">
+                    <ComboBoxItem IsSelected="True">
+                        <TextBlock>
+                            <Rectangle Fill="Black" Height="10" Width="25"></Rectangle>
+                            Black
+                        </TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>
+                            <Rectangle Fill="Orange" Height="10" Width="25"></Rectangle>
+                            Orange
+                        </TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>
+                            <Rectangle Fill="Crimson" Height="10" Width="25"></Rectangle>
+                            Crimson
+                        </TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>
+                            <Rectangle Fill="OliveDrab" Height="10" Width="25"></Rectangle>
+                            OliveDrab
+                        </TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>
+                            <Rectangle Fill="PowderBlue" Height="10" Width="25"></Rectangle>
+                            PowderBlue
+                        </TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>
+                            <Rectangle Fill="LightGray" Height="10" Width="25"></Rectangle>
+                            LightGray
+                        </TextBlock>
+                    </ComboBoxItem>
+                </ComboBox>
+            </ToolBar>
+        </ToolBarTray>
+        <RichTextBox x:Name="WorkField" Margin="0,50,0,0">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</Window>
