@@ -90,5 +90,24 @@ namespace WpfApp1
         {
             ChangeSelectedText(TextBox.TextDecorationsProperty, "None");
         }
+
+        private void New_Click(object sender, RoutedEventArgs e) { }
+        private void Save_Click(object sender, RoutedEventArgs e) { }
+        private void Open_Click(object sender, RoutedEventArgs e) { }
+        private void Copy_Click(object sender, RoutedEventArgs e)
+        {
+            WorkField.Copy();
+        }
+        private void Paste_Click(object sender, RoutedEventArgs e)
+        {
+            WorkField.Paste();
+        }
+
+        private void WorkField_TextChanged(object sender, RoutedEventArgs e)
+        {
+            TextRange value = new TextRange(WorkField.Document.ContentStart, WorkField.Document.ContentEnd);
+            if (StatusNumber != null)
+                StatusNumber.Content = $"Знаки - {value.Text.Length - 2}";
+        }
     }
 }

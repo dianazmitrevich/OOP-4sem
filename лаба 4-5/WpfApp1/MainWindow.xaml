@@ -9,13 +9,13 @@
     <Grid>
         <Menu Height="24" VerticalAlignment="Top" Grid.ColumnSpan="2">
             <MenuItem Header="File" Height="24">
-                <MenuItem Header="New" />
-                <MenuItem Header="Save" />
-                <MenuItem Header="Open" />
+                <MenuItem Click="New_Click" Header="New" />
+                <MenuItem Click="Save_Click" Header="Save" />
+                <MenuItem Click="Open_Click" Header="Open" />
             </MenuItem>
             <MenuItem Header="Edit" >
-                <MenuItem Header="Copy" />
-                <MenuItem Header="Paste" />
+                <MenuItem Click="Copy_Click" Header="Copy" />
+                <MenuItem Click="Paste_Click" Header="Paste" />
             </MenuItem>
         </Menu>
         <ToolBarTray Height="24" VerticalAlignment="Top" Margin="0,24,0,0">
@@ -95,12 +95,15 @@
                 </ComboBox>
             </ToolBar>
         </ToolBarTray>
-        <RichTextBox x:Name="WorkField" Margin="0,50,0,0">
+        <RichTextBox x:Name="WorkField" Margin="0,50,0,0" TextChanged="WorkField_TextChanged">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
+        <StatusBar Name="StatusBar" Width="800" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <StatusBarItem x:Name="StatusNumber" Content="Знаки - 0"/>
+        </StatusBar>
     </Grid>
 </Window>
