@@ -20,16 +20,16 @@
         </Menu>
         <ToolBarTray Height="24" VerticalAlignment="Top" Margin="0,24,0,0">
             <ToolBar Height="24" Width="auto" Margin="0,0,-1000,558" Header="&#xD;&#xA;">
-                <Button x:Name="_Undo" ToolTip="Undo">
+                <Button x:Name="BackButton" ToolTip="Back" Click="BackButton_Click">
                     <Image Source="C:\Users\diana\Desktop\OOP-4sem\лаба 4-5\back.png" Height="13" Width="14" />
                 </Button>
-                <Button x:Name="_Redo" ToolTip="Redo">
+                <Button x:Name="ForwardButton" ToolTip="Forward" Click="ForwardButton_Click">
                     <Image Source="C:\Users\diana\Desktop\OOP-4sem\лаба 4-5\forward.png" Height="13" Width="14" />
                 </Button>
                 <Separator Margin="4" />
-                <ToggleButton Padding="4 0 4 0">B</ToggleButton>
-                <ToggleButton Padding="4 0 4 0" FontStyle="Italic">I</ToggleButton>
-                <ToggleButton Padding="4 0 4 0">
+                <ToggleButton x:Name="BoldButton" Padding="4 0 4 0" Checked="BoldButton_Checked" Unchecked="BoldButton_Unchecked">B</ToggleButton>
+                <ToggleButton x:Name="ItalicButton" Padding="4 0 4 0" FontStyle="Italic" Checked="ItalicButton_Checked" Unchecked="ItalicButton_Unchecked">I</ToggleButton>
+                <ToggleButton x:Name="UnderlineButton" Padding="4 0 4 0" Checked="UnderlineButton_Checked" Unchecked="UnderlineButton_Unchecked">
                     <TextBlock TextDecorations="Underline">U</TextBlock>
                 </ToggleButton>
                 <Separator Margin="4" />

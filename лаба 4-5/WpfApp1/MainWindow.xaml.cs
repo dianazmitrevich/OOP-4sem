@@ -56,5 +56,39 @@ namespace WpfApp1
                 ChangeSelectedText(TextElement.ForegroundProperty, Regex.Replace(selectedItem.Trim(), @".*:\s+", ""));
             }
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            WorkField.Undo();
+        }
+        private void ForwardButton_Click(object sender, RoutedEventArgs e)
+        {
+            WorkField.Redo();
+        }
+
+        private void BoldButton_Checked(object sender, RoutedEventArgs e)
+        {
+            ChangeSelectedText(TextElement.FontWeightProperty, "Bold");
+        }
+        private void BoldButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ChangeSelectedText(TextElement.FontWeightProperty, "Regular");
+        }
+        private void ItalicButton_Checked(object sender, RoutedEventArgs e)
+        {
+            ChangeSelectedText(TextElement.FontStyleProperty, "Italic");
+        }
+        private void ItalicButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ChangeSelectedText(TextElement.FontStyleProperty, "Normal");
+        }
+        private void UnderlineButton_Checked(object sender, RoutedEventArgs e)
+        {
+            ChangeSelectedText(TextBox.TextDecorationsProperty, "Underline");
+        }
+        private void UnderlineButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ChangeSelectedText(TextBox.TextDecorationsProperty, "None");
+        }
     }
 }
