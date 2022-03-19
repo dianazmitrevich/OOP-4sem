@@ -1,5 +1,7 @@
 ﻿using System;
+using Microsoft.Win32;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -91,9 +93,61 @@ namespace WpfApp1
             ChangeSelectedText(TextBox.TextDecorationsProperty, "None");
         }
 
-        private void New_Click(object sender, RoutedEventArgs e) { }
-        private void Save_Click(object sender, RoutedEventArgs e) { }
-        private void Open_Click(object sender, RoutedEventArgs e) { }
+        private void New_Click(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+        }
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange value = new TextRange(WorkField.Document.ContentStart, WorkField.Document.ContentEnd);
+            SaveFileDialog file = new SaveFileDialog();
+            file.Filter = "Text File (*.txt)|*.txt|Rich Text Format (*.rtf)|*.rtf";
+
+            if (file.ShowDialog() == true)
+            {
+                using (FileStream fs = File.Create(file.FileName))
+                {
+                    string extension = System.IO.Path.GetExtension(file.FileName).ToLower();
+                    if (extension == ".txt") value.Save(fs, DataFormats.Rtf);
+                    else if (extension == ".rtf") value.Save(fs, DataFormats.Text);
+                    else
+                    {
+                        MessageBox.Show(
+                            "Wrong file extension!",
+                            "Error",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Error
+                        );
+                        return;
+                    }
+                }
+            }
+        }
+        private void Open_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange text = new TextRange(WorkField.Document.ContentStart, WorkField.Document.ContentEnd);
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "All files (*.*)|*.*|Text File (*.txt)|*.txt|Rich Text Format (*.rtf)|*.rtf";
+
+            if (file.ShowDialog() == true)
+            {
+                FileStream fs = new FileStream(file.FileName, FileMode.Open);
+                TextRange range = new TextRange(WorkField.Document.ContentStart, WorkField.Document.ContentEnd);
+                string extension = System.IO.Path.GetExtension(file.FileName).ToLower();
+
+                if (extension != ".rtf" && extension != ".txt")
+                {
+                    MessageBox.Show(
+                        "Wrong file extension!",
+                        "Error",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error
+                    );
+                    return;
+                }
+                range.Load(fs, DataFormats.Rtf);
+            }
+        }
         private void Copy_Click(object sender, RoutedEventArgs e)
         {
             WorkField.Copy();
