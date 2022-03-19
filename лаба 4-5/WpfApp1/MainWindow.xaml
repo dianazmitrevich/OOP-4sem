@@ -6,16 +6,23 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+	<Window.Resources>
+        <ResourceDictionary Source="/languages/russian.xaml"/>
+    </Window.Resources>
     <Grid>
         <Menu Height="24" VerticalAlignment="Top" Grid.ColumnSpan="2">
-            <MenuItem Header="File" Height="24">
-                <MenuItem Click="New_Click" Header="New" />
-                <MenuItem Click="Save_Click" Header="Save" />
-                <MenuItem Click="Open_Click" Header="Open" />
+            <MenuItem Header="{DynamicResource File}" Height="24">
+                <MenuItem Click="New_Click" Header="{DynamicResource New}" />
+                <MenuItem Click="Save_Click" Header="{DynamicResource Save}" />
+                <MenuItem Click="Open_Click" Header="{DynamicResource Open}" />
             </MenuItem>
-            <MenuItem Header="Edit" >
-                <MenuItem Click="Copy_Click" Header="Copy" />
-                <MenuItem Click="Paste_Click" Header="Paste" />
+            <MenuItem Header="{DynamicResource Edit}" >
+                <MenuItem Click="Copy_Click" Header="{DynamicResource Copy}" />
+                <MenuItem Click="Paste_Click" Header="{DynamicResource Paste}" />
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Language}">
+                <MenuItem Click="EN_Click" Header="{DynamicResource en}" />
+                <MenuItem Click="RU_Click" Header="{DynamicResource ru}" />
             </MenuItem>
         </Menu>
         <ToolBarTray Height="24" VerticalAlignment="Top" Margin="0,24,0,0">

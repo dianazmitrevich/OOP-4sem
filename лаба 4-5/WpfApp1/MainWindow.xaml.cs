@@ -109,5 +109,14 @@ namespace WpfApp1
             if (StatusNumber != null)
                 StatusNumber.Content = $"Знаки - {value.Text.Length - 2}";
         }
+
+        private void RU_Click(object sender, RoutedEventArgs e)
+        {
+            this.Resources = new ResourceDictionary() { Source = new Uri("C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/languages/russian.xaml") };
+        }
+        private void EN_Click(object sender, RoutedEventArgs e)
+        {
+            this.Resources = new ResourceDictionary() { Source = new Uri("C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/languages/english.xaml") };
+        }
     }
 }
