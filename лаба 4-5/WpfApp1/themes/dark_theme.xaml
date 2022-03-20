@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="MenuColor">DarkSeaGreen</SolidColorBrush>
+    <SolidColorBrush x:Key="ToolBarColor">DarkSeaGreen</SolidColorBrush>
+    <SolidColorBrush x:Key="TextBoxColor">#fff</SolidColorBrush>
+    <SolidColorBrush x:Key="StatusBarColor">Azure</SolidColorBrush>
+</ResourceDictionary>

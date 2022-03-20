@@ -164,13 +164,38 @@ namespace WpfApp1
                 StatusNumber.Content = $"Знаки - {value.Text.Length - 2}";
         }
 
+        private ResourceDictionary language= new ResourceDictionary();
+        private ResourceDictionary theme = new ResourceDictionary();
+        private void ChangeResource(ResourceDictionary oldResource, string newResource)
+        {
+            Uri newSource = new Uri(newResource);
+            ResourceDictionary newResourceLang = new ResourceDictionary();
+            newResourceLang.Source = newSource;
+            this.Resources.MergedDictionaries.Remove(oldResource);
+            this.Resources.MergedDictionaries.Add(newResourceLang);
+            oldResource.Source = newSource;
+        }
+
         private void RU_Click(object sender, RoutedEventArgs e)
         {
-            this.Resources = new ResourceDictionary() { Source = new Uri("C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/languages/russian.xaml") };
+            this.ChangeResource(this.language, "C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/languages/russian.xaml");
         }
         private void EN_Click(object sender, RoutedEventArgs e)
         {
-            this.Resources = new ResourceDictionary() { Source = new Uri("C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/languages/english.xaml") };
+            this.ChangeResource(this.language, "C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/languages/english.xaml");
+        }
+
+        private void Dark_Click(object sender, RoutedEventArgs e)
+        {
+            this.ChangeResource(this.theme, "C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/themes/dark_theme.xaml");
+        }
+        private void Light_Click(object sender, RoutedEventArgs e)
+        {
+            this.ChangeResource(this.theme, "C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/themes/light_theme.xaml");
+        }
+        private void Color_Click(object sender, RoutedEventArgs e)
+        {
+            this.ChangeResource(this.theme, "C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/themes/color_theme.xaml");
         }
     }
 }

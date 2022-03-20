@@ -13,4 +13,8 @@
     <v:String x:Key="Language">Language</v:String>
     <v:String x:Key="ru">Русский</v:String>
     <v:String x:Key="en">English</v:String>
+    <v:String x:Key="Theme">Theme</v:String>
+    <v:String x:Key="Light">Light accents</v:String>
+    <v:String x:Key="Dark">Green accents</v:String>
+    <v:String x:Key="Color">Orange accents</v:String>
 </ResourceDictionary>

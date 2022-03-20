@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Notepad" Height="450" Width="800" Icon="C:\Users\diana\Desktop\OOP-4sem\лаба 4-5\notepad_icon.png" Cursor="Pen">
 	<Window.Resources>
-        <ResourceDictionary Source="/languages/russian.xaml"/>
-    </Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary x:Name="Theme" Source="/themes/light_theme.xaml"/>
+	            <ResourceDictionary x:Name="Language" Source="/languages/english.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
     <Grid>
-        <Menu Height="24" VerticalAlignment="Top" Grid.ColumnSpan="2">
+        <Menu Height="24" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="{DynamicResource MenuColor}">
             <MenuItem Header="{DynamicResource File}" Height="24">
                 <MenuItem Click="New_Click" Header="{DynamicResource New}" />
                 <MenuItem Click="Save_Click" Header="{DynamicResource Save}" />
@@ -24,9 +29,14 @@
                 <MenuItem Click="EN_Click" Header="{DynamicResource en}" />
                 <MenuItem Click="RU_Click" Header="{DynamicResource ru}" />
             </MenuItem>
+            <MenuItem Header="{DynamicResource Theme}">
+                <MenuItem Click="Light_Click" Header="{DynamicResource Light}" />
+                <MenuItem Click="Dark_Click" Header="{DynamicResource Dark}" />
+                <MenuItem Click="Color_Click" Header="{DynamicResource Color}" />
+            </MenuItem>
         </Menu>
-        <ToolBarTray Height="24" VerticalAlignment="Top" Margin="0,24,0,0">
-            <ToolBar Height="24" Width="auto" Margin="0,0,-1000,558" Header="&#xD;&#xA;">
+        <ToolBarTray Height="24" VerticalAlignment="Top" Margin="0,24,0,0" Background="{DynamicResource ToolBarColor}">
+            <ToolBar Height="24" Width="auto" Margin="0,0,-1000,558" Header="&#xD;&#xA;" Background="{DynamicResource ToolBarColor}">
                 <Button x:Name="BackButton" ToolTip="Back" Click="BackButton_Click">
                     <Image Source="C:\Users\diana\Desktop\OOP-4sem\лаба 4-5\back.png" Height="13" Width="14" />
                 </Button>
@@ -102,14 +112,14 @@
                 </ComboBox>
             </ToolBar>
         </ToolBarTray>
-        <RichTextBox x:Name="WorkField" Margin="0,50,0,0" TextChanged="WorkField_TextChanged">
+        <RichTextBox x:Name="WorkField" Margin="0,48,0,0" TextChanged="WorkField_TextChanged" Background="{DynamicResource TextBoxColor}">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <StatusBar Name="StatusBar" Width="800" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+        <StatusBar Name="StatusBar" Width="800" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="{DynamicResource StatusBarColor}">
             <StatusBarItem x:Name="StatusNumber" Content="Знаки - 0"/>
         </StatusBar>
     </Grid>
