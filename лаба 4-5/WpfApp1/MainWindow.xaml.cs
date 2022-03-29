@@ -178,24 +178,24 @@ namespace WpfApp1
 
         private void RU_Click(object sender, RoutedEventArgs e)
         {
-            this.ChangeResource(this.language, "C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/languages/russian.xaml");
+            this.ChangeResource(this.language, "pack://application:,,/languages/russian.xaml");
         }
         private void EN_Click(object sender, RoutedEventArgs e)
         {
-            this.ChangeResource(this.language, "C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/languages/english.xaml");
+            this.ChangeResource(this.language, "pack://application:,,/languages/english.xaml");
         }
 
         private void Dark_Click(object sender, RoutedEventArgs e)
         {
-            this.ChangeResource(this.theme, "C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/themes/dark_theme.xaml");
+            this.ChangeResource(this.theme, "pack://application:,,/themes/dark_theme.xaml");
         }
         private void Light_Click(object sender, RoutedEventArgs e)
         {
-            this.ChangeResource(this.theme, "C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/themes/light_theme.xaml");
+            this.ChangeResource(this.theme, "pack://application:,,/themes/light_theme.xaml");
         }
         private void Color_Click(object sender, RoutedEventArgs e)
         {
-            this.ChangeResource(this.theme, "C:/Users/diana/Desktop/OOP-4sem/лаба 4-5/WpfApp1/themes/color_theme.xaml");
+            this.ChangeResource(this.theme, "pack://application:,,/themes/color_theme.xaml");
         }
     }
 }
