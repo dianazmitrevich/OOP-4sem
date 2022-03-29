@@ -7,13 +7,21 @@
         mc:Ignorable="d"
         Title="Notepad" Height="450" Width="800" Icon="C:\Users\diana\Desktop\OOP-4sem\лаба 4-5\notepad_icon.png" Cursor="Pen">
 	<Window.Resources>
-		<ResourceDictionary>
-			<ResourceDictionary.MergedDictionaries>
-				<ResourceDictionary x:Name="Theme" Source="/themes/light_theme.xaml"/>
-	            <ResourceDictionary x:Name="Language" Source="/languages/english.xaml"/>
-			</ResourceDictionary.MergedDictionaries>
-		</ResourceDictionary>
-	</Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Name="Theme" Source="/themes/light_theme.xaml"/>
+                <ResourceDictionary x:Name="Language" Source="/languages/english.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="StatusBar">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=BoldButton, Path=IsChecked}" Value="true">
+                        <Setter Property="BorderThickness" Value="0,1,0,0"></Setter>
+                        <Setter Property="BorderBrush" Value="red"></Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Menu Height="24" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="{DynamicResource MenuColor}">
             <MenuItem Header="{DynamicResource File}" Height="24">
