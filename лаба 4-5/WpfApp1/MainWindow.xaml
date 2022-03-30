@@ -49,6 +49,7 @@
                 <MenuItem Click="New_Click" Header="{DynamicResource New}" />
                 <MenuItem Click="Save_Click" Header="{DynamicResource Save}" />
                 <MenuItem Click="Open_Click" Header="{DynamicResource Open}" />
+                <MenuItem x:Name="RecentFilesList" Header="..." />
             </MenuItem>
             <MenuItem Header="{DynamicResource Edit}" >
                 <MenuItem Click="Copy_Click" Header="{DynamicResource Copy}" />

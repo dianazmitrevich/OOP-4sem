@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Runtime.Serialization.Json;
 
 namespace WpfApp1
 {
@@ -23,6 +24,8 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        string[] recentFiles = { };
+
         public MainWindow()
         {
             InitializeComponent();
@@ -133,6 +136,7 @@ namespace WpfApp1
             {
                 FileStream fs = new FileStream(file.FileName, FileMode.Open);
                 TextRange range = new TextRange(WorkField.Document.ContentStart, WorkField.Document.ContentEnd);
+                RecentFilesList.Items.Add(file.FileName);
                 string extension = System.IO.Path.GetExtension(file.FileName).ToLower();
 
                 if (extension != ".rtf" && extension != ".txt")
