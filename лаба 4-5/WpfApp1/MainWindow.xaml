@@ -12,10 +12,31 @@
                 <ResourceDictionary x:Name="Theme" Source="/themes/light_theme.xaml"/>
                 <ResourceDictionary x:Name="Language" Source="/languages/english.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="MenuItem">
+                <Style.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" FillBehavior="Stop" Duration="0:0:0.3" To="14" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsMouseOver" Value="true"></Condition>
+                            <Condition Property="IsPressed" Value="true"></Condition>
+                        </MultiTrigger.Conditions>
+                        <MultiTrigger.Setters>
+                            <Setter Property="BorderThickness" Value="2"></Setter>
+                            <Setter Property="BorderBrush" Value="red"></Setter>
+                        </MultiTrigger.Setters>
+                    </MultiTrigger>
+                </Style.Triggers>
+            </Style>
             <Style TargetType="StatusBar">
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding ElementName=BoldButton, Path=IsChecked}" Value="true">
-                        <Setter Property="BorderThickness" Value="0,1,0,0"></Setter>
+                        <Setter Property="BorderThickness" Value="0,2,0,0"></Setter>
                         <Setter Property="BorderBrush" Value="red"></Setter>
                     </DataTrigger>
                 </Style.Triggers>
