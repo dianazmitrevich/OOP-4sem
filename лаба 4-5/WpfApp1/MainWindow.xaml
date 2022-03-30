@@ -151,5 +151,6 @@
         <StatusBar Name="StatusBar" Width="800" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="{DynamicResource StatusBarColor}">
             <StatusBarItem x:Name="StatusNumber" Content="Знаки - 0"/>
         </StatusBar>
+        <!--<local:CustomControl/>-->
     </Grid>
 </Window>
