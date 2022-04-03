@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="WpfApp1.ColorCoordinates"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d" 
+             d:DesignHeight="120" d:DesignWidth="300" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Content="Красная координата" Grid.Row="0" Padding="11"></Label>
+        <Label Content="Зеленая координата" Grid.Row="1" Padding="11"></Label>
+        <Label Content="Голубая координата" Grid.Row="2" Padding="11"></Label>
+        <TextBox Grid.Column="1" Width="100" Margin="10"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Width="100" Margin="10"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Width="100" Margin="10"/>
+    </Grid>
+</UserControl>
