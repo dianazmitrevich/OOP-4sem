@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Notepad" Height="450" Width="800" Icon="C:\Users\diana\Desktop\OOP-4sem\лаба 4-5\notepad_icon.png" Cursor="Pen">
+        Title="Notepad" Height="450" Width="800" Icon="icons/notepad_icon.png" Cursor="Pen">
 	<Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -28,7 +28,6 @@
                         </MultiTrigger.Conditions>
                         <MultiTrigger.Setters>
                             <Setter Property="BorderThickness" Value="2"></Setter>
-                            <Setter Property="BorderBrush" Value="red"></Setter>
                         </MultiTrigger.Setters>
                     </MultiTrigger>
                 </Style.Triggers>
@@ -68,10 +67,10 @@
         <ToolBarTray Height="24" VerticalAlignment="Top" Margin="0,24,0,0" Background="{DynamicResource ToolBarColor}">
             <ToolBar Height="24" Width="auto" Margin="0,0,-1000,558" Header="&#xD;&#xA;" Background="{DynamicResource ToolBarColor}">
                 <Button x:Name="BackButton" ToolTip="Back" Click="BackButton_Click">
-                    <Image Source="C:\Users\diana\Desktop\OOP-4sem\лаба 4-5\back.png" Height="13" Width="14" />
+                    <Image Source="icons/back.png" Height="13" Width="14" />
                 </Button>
                 <Button x:Name="ForwardButton" ToolTip="Forward" Click="ForwardButton_Click">
-                    <Image Source="C:\Users\diana\Desktop\OOP-4sem\лаба 4-5\forward.png" Height="13" Width="14" />
+                    <Image Source="icons/forward.png" Height="13" Width="14" />
                 </Button>
                 <Separator Margin="4" />
                 <ToggleButton x:Name="BoldButton" Padding="4 0 4 0" Checked="BoldButton_Checked" Unchecked="BoldButton_Unchecked">B</ToggleButton>
