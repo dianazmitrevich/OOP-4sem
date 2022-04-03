@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1"
              mc:Ignorable="d" 
-             d:DesignHeight="120" d:DesignWidth="300" Background="White">
+             d:DesignHeight="120" d:DesignWidth="600" Background="White"
+             x:Name="colorCoordinates">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
@@ -14,13 +15,19 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
             <ColumnDefinition Width="auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Content="Красная координата" Grid.Row="0" Padding="11"></Label>
         <Label Content="Зеленая координата" Grid.Row="1" Padding="11"></Label>
         <Label Content="Голубая координата" Grid.Row="2" Padding="11"></Label>
-        <TextBox Grid.Column="1" Width="100" Margin="10"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Width="100" Margin="10"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Width="100" Margin="10"/>
+        <Slider Value="{Binding ElementName=colorCoordinates, Path=Red}" Minimum="-1" Maximum="256" Grid.Column="1" Width="100" Margin="10"/>
+        <Slider Value="{Binding ElementName=colorCoordinates, Path=Green}" Minimum="0" Maximum="255" Grid.Row="1" Grid.Column="1" Width="100" Margin="10"/>
+        <Slider Value="{Binding ElementName=colorCoordinates, Path=Blue}" Minimum="1" Maximum="255" Grid.Row="2" Grid.Column="1" Width="100" Margin="10"/>
+        <Rectangle Grid.Column="2" Grid.RowSpan="2"  Width="200" Height="50" VerticalAlignment="Top" Margin="25 10" Stroke="LightGray" StrokeThickness="1">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="{Binding ElementName=colorCoordinates, Path=Color}"></SolidColorBrush>
+            </Rectangle.Fill>
+        </Rectangle>
     </Grid>
 </UserControl>

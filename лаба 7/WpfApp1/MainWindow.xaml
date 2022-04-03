@@ -15,14 +15,9 @@
             <ColumnDefinition Width="300"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <local:ColorCoordinates Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"></local:ColorCoordinates>
-        <Rectangle Grid.Column="1" Width="200" Height="50" VerticalAlignment="Top" Margin="25" Stroke="LightGray" StrokeThickness="1">
-            <Rectangle.Fill>
-                <SolidColorBrush Color="{Binding ElementName=colorCoordinates, Path=Color}"></SolidColorBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Button Grid.Column="1" Width="200" Height="35" VerticalAlignment="Bottom" Margin="25" Content="Добавить образец" Background="White" BorderThickness="1" BorderBrush="LightGray"></Button>
-        <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="25" Width="auto">
+        <local:ColorCoordinates x:Name="colorCoordinates" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15 0"></local:ColorCoordinates>
+        <Button Grid.Column="1" Width="200" Height="35" VerticalAlignment="Bottom" Margin="25" Content="Добавить образец" Background="White" BorderThickness="1" BorderBrush="LightGray" Click="Button_Click"></Button>
+        <StackPanel x:Name="SwatchesStack" Grid.Row="1" HorizontalAlignment="Left" Margin="25" Width="auto">
             <local:ColorSwatch></local:ColorSwatch>
         </StackPanel>
     </Grid>
