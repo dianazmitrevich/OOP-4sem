@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="320" Width="600" FontFamily="Noto Sans" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
-        Name="MainWindow">
-    <!--<Window.CommandBindings>
+        x:Name="WindowLaba">
+    <Window.CommandBindings>
         <CommandBinding Command="local:CustomRoutedUICommand.Requery" Executed="CustomCommand_Executed"></CommandBinding>
-    </Window.CommandBindings>-->
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="150"></RowDefinition>
@@ -20,7 +20,8 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:ColorCoordinates x:Name="colorCoordinates" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15 0"></local:ColorCoordinates>
-        <Button Grid.Column="1" Command="" Width="200" Height="35" VerticalAlignment="Bottom" Margin="25" Content="Добавить образец" Background="White" BorderThickness="1" BorderBrush="LightGray" Click="Button_Click"></Button>
-        <StackPanel Width="550" Orientation="Horizontal" x:Name="SwatchesStack" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="25"></StackPanel>
+        <Button Command="local:CustomRoutedUICommand.Requery" Grid.Column="1" Width="200" Height="35" VerticalAlignment="Bottom" Margin="25" Content="Добавить образец" Background="White" BorderThickness="1" BorderBrush="LightGray" Click="Button_Click"></Button>
+        <StackPanel Width="550" Orientation="Horizontal" x:Name="SwatchesStack" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="25">
+         </StackPanel>
     </Grid>
 </Window>
