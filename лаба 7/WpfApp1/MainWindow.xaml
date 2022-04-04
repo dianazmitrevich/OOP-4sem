@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600" FontFamily="Noto Sans" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="320" Width="600" FontFamily="Noto Sans" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Name="MainWindow">
+    <!--<Window.CommandBindings>
+        <CommandBinding Command="local:CustomRoutedUICommand.Requery" Executed="CustomCommand_Executed"></CommandBinding>
+    </Window.CommandBindings>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="150"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"></ColumnDefinition>

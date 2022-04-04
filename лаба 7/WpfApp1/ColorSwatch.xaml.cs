@@ -24,6 +24,7 @@ namespace WpfApp1
         {
             InitializeComponent();
             SwatchColor.Color = color;
+            SwatchLabel.Content = color;
         }
     }
 }

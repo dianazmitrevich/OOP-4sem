@@ -37,5 +37,15 @@ namespace WpfApp1
             else
                 SwatchesStack.Children.Add(new ColorSwatch(colorCoordinate));
         }
+
+        private void BackgroundColor_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Background = new SolidColorBrush(colorCoordinate);
+        }
+
+        private void CustomCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("Пользовательская команда на основе RoutedUICommand!");
+        }
     }
 }
