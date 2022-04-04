@@ -20,6 +20,8 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Color colorCoordinate;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +29,13 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //SwatchesStack
+            if (SwatchesStack.Children.Count == 5)
+            {
+                SwatchesStack.Children.RemoveAt(0);
+                SwatchesStack.Children.Add(new ColorSwatch(colorCoordinate));
+            }
+            else
+                SwatchesStack.Children.Add(new ColorSwatch(colorCoordinate));
         }
     }
 }

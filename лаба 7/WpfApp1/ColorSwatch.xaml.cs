@@ -20,9 +20,10 @@ namespace WpfApp1
     /// </summary>
     public partial class ColorSwatch : UserControl
     {
-        public ColorSwatch()
+        public ColorSwatch(Color color)
         {
             InitializeComponent();
+            SwatchColor.Color = color;
         }
     }
 }

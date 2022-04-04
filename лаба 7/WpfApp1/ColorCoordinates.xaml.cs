@@ -91,6 +91,7 @@ namespace WpfApp1
             else if (e.Property == BlueProperty)
                 color.B = (byte)e.NewValue;
             colorCoordinates.Color = color;
+            MainWindow.colorCoordinate = color;
         }
         private static void OnColorChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {

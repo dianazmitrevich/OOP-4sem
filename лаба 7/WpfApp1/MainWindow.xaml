@@ -16,9 +16,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:ColorCoordinates x:Name="colorCoordinates" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15 0"></local:ColorCoordinates>
-        <Button Grid.Column="1" Width="200" Height="35" VerticalAlignment="Bottom" Margin="25" Content="Добавить образец" Background="White" BorderThickness="1" BorderBrush="LightGray" Click="Button_Click"></Button>
-        <StackPanel x:Name="SwatchesStack" Grid.Row="1" HorizontalAlignment="Left" Margin="25" Width="auto">
-            <local:ColorSwatch></local:ColorSwatch>
-        </StackPanel>
+        <Button Grid.Column="1" Command="" Width="200" Height="35" VerticalAlignment="Bottom" Margin="25" Content="Добавить образец" Background="White" BorderThickness="1" BorderBrush="LightGray" Click="Button_Click"></Button>
+        <StackPanel Width="550" Orientation="Horizontal" x:Name="SwatchesStack" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="25"></StackPanel>
     </Grid>
 </Window>
