@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="WpfApp1.Add"
+﻿<UserControl x:Class="WpfApp1.Edit"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -19,13 +19,13 @@
             <ColumnDefinition Width="auto"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Content="Выберите элемент для добавления             &#8594;" Padding="10" VerticalAlignment="Center"></Label>
-        <ComboBox Name="ElementToAddBox" Grid.Column="1" Height="22" Width="200" HorizontalAlignment="Left" Margin="10">
+        <Label Grid.Row="0" Content="Выберите элемент для редактирования        &#8594;" Padding="10" VerticalAlignment="Center"></Label>
+        <ComboBox Name="ElementToEditBox" Grid.Column="1" Height="22" Width="200" HorizontalAlignment="Left" Margin="10">
             <TextBlock Text="Самолет"></TextBlock>
             <TextBlock Text="Работник"></TextBlock>
             <TextBlock Text="Производитель"></TextBlock>
         </ComboBox>
-        <Button Name="ElementToAddButton" Click="ElementToAddButton_Click" Grid.Row="0" Grid.Column="2" Width="22" Height="22" Content="&#10003;" Background="#fff" BorderBrush="LightGray" BorderThickness="1" HorizontalAlignment="Left" Margin="10"></Button>
-        <StackPanel Name="AddElementField" Grid.Row="1" Grid.ColumnSpan="3"></StackPanel>
+        <Button Name="ElementToEditButton" Click="ElementToEditButton_Click" Grid.Row="0" Grid.Column="2" Width="22" Height="22" Content="&#10003;" Background="#fff" BorderBrush="LightGray" BorderThickness="1" HorizontalAlignment="Left" Margin="10"></Button>
+        <StackPanel Name="EditElementField" Grid.Row="1" Grid.ColumnSpan="3"></StackPanel>
     </Grid>
 </UserControl>

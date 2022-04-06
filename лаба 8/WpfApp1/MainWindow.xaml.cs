@@ -24,5 +24,23 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void AddElement_Click(object sender, RoutedEventArgs e)
+        {
+            MainField.Children.Clear();
+            MainField.Children.Add(new Add());
+        }
+
+        private void EditElement_Click(object sender, RoutedEventArgs e)
+        {
+            MainField.Children.Clear();
+            MainField.Children.Add(new Edit());
+        }
+
+        private void DeleteElement_Click(object sender, RoutedEventArgs e)
+        {
+            MainField.Children.Clear();
+            MainField.Children.Add(new Delete());
+        }
     }
 }

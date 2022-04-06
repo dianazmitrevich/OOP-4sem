@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,25 @@ namespace WpfApp1
         public Add()
         {
             InitializeComponent();
+        }
+
+        private void ElementToAddButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ElementToAddBox.Text == "Самолет")
+            {
+                AddElementField.Children.Clear();
+                AddElementField.Children.Add(new AddPlane());
+            }
+            else if (ElementToAddBox.Text == "Работник")
+            {
+                AddElementField.Children.Clear();
+                AddElementField.Children.Add(new AddCrewMember());
+            }
+            else if (ElementToAddBox.Text == "Производитель")
+            {
+                AddElementField.Children.Clear();
+                AddElementField.Children.Add(new AddManufacturer());
+            }
         }
     }
 }

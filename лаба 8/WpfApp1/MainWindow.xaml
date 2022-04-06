@@ -17,10 +17,12 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" Background="#fff" Padding="5 0 0 0" BorderBrush="LightGray" BorderThickness="0 1 0 1">
-            <MenuItem Height="25" Header="Добавление"></MenuItem>
-            <MenuItem Height="25" Header="Редактирование"></MenuItem>
-            <MenuItem Height="25" Header="Удаление"></MenuItem>
+            <MenuItem Name="AddElement" Click="AddElement_Click" Height="25" Header="Добавление"></MenuItem>
+            <MenuItem Name="EditElement" Click="EditElement_Click" Height="25" Header="Редактирование"></MenuItem>
+            <MenuItem Name="DeleteElement" Click="DeleteElement_Click" Height="25" Header="Удаление"></MenuItem>
         </Menu>
-        <local:Add Grid.Row="1"></local:Add>
+        <StackPanel Name="MainField" Grid.Row="1">
+            <local:Add></local:Add>
+        </StackPanel>
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1"
              mc:Ignorable="d" 
-             d:DesignHeight="380"
+             d:DesignHeight="350"
              d:DesignWidth="800"
              Background="#fff">
     <Grid>
@@ -29,24 +29,25 @@
             <Label Content="Производитель*" HorizontalAlignment="Right"></Label>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Margin="10" HorizontalAlignment="Left">
-            <TextBox Width="200" Margin="0 0 0 6"></TextBox>
-            <ComboBox  Margin="0 0 0 7">
+            <TextBox Name="planeID" Width="200" Margin="0 0 0 6"></TextBox>
+            <ComboBox Name="planeType" Margin="0 0 0 7">
                 <TextBlock Text="Пассажирский"></TextBlock>
                 <TextBlock Text="Военный"></TextBlock>
                 <TextBlock Text="Грузовой"></TextBlock>
             </ComboBox>
-            <StackPanel Margin="0 0 0 6">
-                <RadioButton Content="Airbus"></RadioButton>
-                <RadioButton Content="Boeing"></RadioButton>
+            <StackPanel Name="planeModel" Margin="0 0 0 6">
+                <RadioButton Name="rbAirbus" Checked="rbAirbus_Checked" Content="Airbus"></RadioButton>
+                <RadioButton Name="rbBoeing" Checked="rbBoeing_Checked" Content="Boeing"></RadioButton>
             </StackPanel>
-            <TextBox Margin="0 0 0 8"></TextBox>
-            <TextBox Margin="0 0 0 9"></TextBox>
-            <TextBox Margin="0 0 0 8"></TextBox>
-            <DatePicker Margin="0 0 0 7"></DatePicker>
-            <TextBox></TextBox>
+            <TextBox Name="planeCapacity" Margin="0 0 0 8"></TextBox>
+            <TextBox Name="planeYear" Margin="0 0 0 9"></TextBox>
+            <TextBox Name="planeLoadCapacity" Margin="0 0 0 12"></TextBox>
+            <TextBox Name="planeMDate" Margin="0 0 0 9"></TextBox>
+            <!--<DatePicker Name="planeMDate" Margin="0 0 0 7"></DatePicker>-->
+            <TextBox Name="planeManufacturer"></TextBox>
         </StackPanel>
-        <Button Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="48" Content="Добавить" Margin="10" Background="#fff" BorderBrush="LightGray" BorderThickness="1"></Button>
-        <DataGrid VerticalScrollBarVisibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">
+        <Button Name="AddPlaneButton" Click="AddPlaneButton_Click" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="48" Content="Добавить" Margin="10" Background="#fff" BorderBrush="LightGray" BorderThickness="1"></Button>
+        <DataGrid Height="80" VerticalScrollBarVisibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID"></DataGridTextColumn>
                 <DataGridTextColumn Header="Тип"></DataGridTextColumn>
