@@ -36,27 +36,27 @@
                 <TextBlock Text="Грузовой"></TextBlock>
             </ComboBox>
             <StackPanel Name="planeModel" Margin="0 0 0 6">
-                <RadioButton Name="rbAirbus" Content="Airbus"></RadioButton>
-                <RadioButton Name="rbBoeing" Content="Boeing"></RadioButton>
+                <RadioButton Name="rbAirbus" Checked="rbAirbus_Checked" Content="Airbus"></RadioButton>
+                <RadioButton Name="rbBoeing" Checked="rbBoeing_Checked" Content="Boeing"></RadioButton>
             </StackPanel>
             <TextBox Name="planeCapacity" Margin="0 0 0 8"></TextBox>
             <TextBox Name="planeYear" Margin="0 0 0 9"></TextBox>
             <TextBox Name="planeLoadCapacity" Margin="0 0 0 12"></TextBox>
-            <TextBox Name="planeMDate" Margin="0 0 0 9"></TextBox>
-            <!--<DatePicker Name="planeMDate" Margin="0 0 0 7"></DatePicker>-->
+            <!--<TextBox Name="planeMDate" Margin="0 0 0 9"></TextBox>-->
+            <DatePicker Name="planeMDate" Margin="0 0 0 7"></DatePicker>
             <TextBox Name="planeManufacturer"></TextBox>
         </StackPanel>
-        <Button Name="AddPlaneButton" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="45" Content="Добавить" Margin="10"></Button>
-        <DataGrid VerticalAlignment="Top" Height="200" VerticalScrollBarVisibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">
+        <Button Name="AddPlaneButton" Click="AddPlaneButton_Click" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="45" Content="Добавить" Margin="10"></Button>
+        <DataGrid Name="DataGridPlanes" VerticalAlignment="Top" Height="200" VerticalScrollBarVisibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID"></DataGridTextColumn>
-                <DataGridTextColumn Header="Тип"></DataGridTextColumn>
-                <DataGridTextColumn Header="Модель"></DataGridTextColumn>
-                <DataGridTextColumn Header="Вместимость"></DataGridTextColumn>
-                <DataGridTextColumn Header="Год"></DataGridTextColumn>
-                <DataGridTextColumn Header="Грузоподъёмность"></DataGridTextColumn>
-                <DataGridTextColumn Header="Дата последнего ТО"></DataGridTextColumn>
-                <DataGridTextColumn Header="Производитель"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Тип" Binding="{Binding Path=Type}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Модель" Binding="{Binding Path=Model}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Вместимость" Binding="{Binding Path=Capacity}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Год" Binding="{Binding Path=Year}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Грузоподъёмность" Binding="{Binding Path=LoadCapacity}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата последнего ТО" Binding="{Binding Path=Maintenance}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Производитель" Binding="{Binding Path=Manufacturer}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
