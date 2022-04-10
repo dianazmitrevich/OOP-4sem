@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfApp1.Add.AddElementForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Add"
+        mc:Ignorable="d"
+        Title="AddElementForm"
+        Height="545" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="45"></RowDefinition>
+        <RowDefinition Height="500"></RowDefinition>
+    </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="BackButton" Click="BackButton_Click" Content="На главную" Width="100" Height="30" Margin="10 0"></Button>
+            <Button Name="AddPlane" Click="AddPlane_Click" Content="Самолет" Width="100" Height="30"></Button>
+            <Button Name="AddCrew" Click="AddCrew_Click" Content="Экипаж" Width="100" Height="30" Margin="10 0"></Button>
+            <Button Name="AddManufacturer" Click="AddManufacturer_Click" Content="Производитель" Width="100" Height="30"></Button>
+        </StackPanel>
+        <StackPanel Name="AddElementField" Grid.Row="1" Grid.ColumnSpan="3"></StackPanel>
+    </Grid>
+</Window>

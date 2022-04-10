@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfApp1.Remove.RemoveElementForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Remove"
+        mc:Ignorable="d"
+        Title="RemoveElementForm"
+        d:DesignHeight="200"
+        d:DesignWidth="300"
+        Background="#fff"
+        FontFamily="Noto Sans"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Name="BackButton" Click="BackButton_Click" Content="На главную" HorizontalAlignment="Left" Width="100" Height="30" Margin="10 0"></Button>
+        <ComboBox Name="ElementToAddBox" Grid.Row="1" Height="22" Width="200" HorizontalAlignment="Left" Margin="10">
+            <TextBlock Text="Самолет"></TextBlock>
+            <TextBlock Text="Работник"></TextBlock>
+            <TextBlock Text="Производитель"></TextBlock>
+        </ComboBox>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Label Content="ID" Margin="5 0"></Label>
+            <TextBox Width="176" Height="25"></TextBox>
+        </StackPanel>
+        <Button Name="RemoveButton" Content="Удалить" Grid.Row="3" HorizontalAlignment="Left" Width="100" Height="30" Margin="10 "></Button>
+    </Grid>
+</Window>
