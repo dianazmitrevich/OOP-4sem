@@ -44,7 +44,7 @@ namespace WpfApp1.Add
                     SqlCommand command = connection.CreateCommand();
                     command.Transaction = transaction;
 
-                    command.CommandText = "INSERT INTO PLANE (ID, Type, Model, Capacity, Year, Load_Capacity, Maintenance_Date, Manufacturer_ID) VALUES (" + Convert.ToInt32(planeID.Text) + ", '" + Convert.ToString(planeType.Text) + "', '" + radioButtonModel + "', " + Convert.ToInt32(planeCapacity.Text) + ", " + Convert.ToInt32(planeYear.Text) + ", '" + planeLoadCapacity.Text + "', '" + Convert.ToDateTime(planeMDate.Text) + "', NULL)";
+                    command.CommandText = "INSERT INTO PLANE (ID, Type, Model, Capacity, Year, Load_Capacity, Maintenance_Date, Manufacturer_ID) VALUES (" + Convert.ToInt32(planeID.Text) + ", '" + Convert.ToString(planeType.Text) + "', '" + radioButtonModel + "', " + Convert.ToInt32(planeCapacity.Text) + ", " + Convert.ToInt32(planeYear.Text) + ", '" + planeLoadCapacity.Text + "', '" + Convert.ToDateTime(planeMDate.Text) + "', " + Convert.ToInt32(planeManufacturer.Text) + ")";
                     command.ExecuteNonQuery();
                     transaction.Commit();
                     command.CommandText = "SELECT * FROM PLANE";
@@ -60,7 +60,8 @@ namespace WpfApp1.Add
                             int year = reader.GetInt32(4);
                             string loadCapacity = reader.GetString(5);
                             DateTime maintenance = reader.GetDateTime(6);
-                            Plane plane = new Plane(id, type, model, capacity, year, loadCapacity, maintenance, 000);
+                            int manufacturer = reader.GetInt32(7);
+                            Plane plane = new Plane(id, type, model, capacity, year, loadCapacity, maintenance, manufacturer);
                             DataGridPlanes.Items.Add(plane);
                         }
                     }

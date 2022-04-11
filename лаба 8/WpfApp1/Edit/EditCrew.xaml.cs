@@ -20,6 +20,8 @@ namespace WpfApp1.Edit
     /// </summary>
     public partial class EditCrew : UserControl
     {
+        string connectionString = @"Data Source=DESKTOP-G5D9MGO;Initial Catalog=Airport;Integrated Security=True;MultipleActiveResultSets=True;";
+
         public EditCrew()
         {
             InitializeComponent();

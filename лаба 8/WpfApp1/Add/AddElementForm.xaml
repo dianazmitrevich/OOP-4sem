@@ -23,6 +23,8 @@
             <Button Name="AddCrew" Click="AddCrew_Click" Content="Экипаж" Width="100" Height="30" Margin="10 0"></Button>
             <Button Name="AddManufacturer" Click="AddManufacturer_Click" Content="Производитель" Width="100" Height="30"></Button>
         </StackPanel>
-        <StackPanel Name="AddElementField" Grid.Row="1" Grid.ColumnSpan="3"></StackPanel>
+        <StackPanel Name="AddElementField" Grid.Row="1" Grid.ColumnSpan="3">
+            <local:PlaneElement></local:PlaneElement>
+        </StackPanel>
     </Grid>
 </Window>

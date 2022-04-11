@@ -30,13 +30,13 @@
             <TextBox Name="manufacturerCountry" Margin="0 0 0 8"></TextBox>
             <TextBox Name="manufacturerYear"></TextBox>
         </StackPanel>
-        <Button Name="AddManufacturerButton" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="44" Content="Добавить" Margin="10"></Button>
-        <DataGrid VerticalAlignment="Top" Height="320" VerticalScrollBarVisibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">
+        <Button Name="AddManufacturerButton" Click="AddManufacturerButton_Click" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="44" Content="Добавить" Margin="10"></Button>
+        <DataGrid Name="DataGridManufacturer" VerticalAlignment="Top" Height="320" VerticalScrollBarVisibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID"></DataGridTextColumn>
-                <DataGridTextColumn Header="Название"></DataGridTextColumn>
-                <DataGridTextColumn Header="Страна"></DataGridTextColumn>
-                <DataGridTextColumn Header="Год основания"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Название"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Country}" Header="Страна"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Year}" Header="Год основания"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

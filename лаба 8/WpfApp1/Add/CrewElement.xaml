@@ -37,15 +37,15 @@
             <TextBox Name="crewBirthYear" Margin="0 0 0 6"></TextBox>
             <TextBox Name="crewExperience"></TextBox>
         </StackPanel>
-        <Button Name="AddCrewMemberButton" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="42" Content="Добавить" Margin="10"></Button>
-        <DataGrid Height="270" VerticalScrollBarVisibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Margin="11,11,9,12" Background="#fff" AutoGenerateColumns="True">
+        <Button Name="AddCrewMemberButton" Click="AddCrewMemberButton_Click" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="42" Content="Добавить" Margin="10"></Button>
+        <DataGrid Name="DataGridCrew" Height="270" VerticalScrollBarVisibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Margin="11,11,9,12" Background="#fff" AutoGenerateColumns="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID"></DataGridTextColumn>
-                <DataGridTextColumn Header="ID самолета для привязки"></DataGridTextColumn>
-                <DataGridTextColumn Header="ФИО"></DataGridTextColumn>
-                <DataGridTextColumn Header="Должность"></DataGridTextColumn>
-                <DataGridTextColumn Header="Год рождения"></DataGridTextColumn>
-                <DataGridTextColumn Header="Стаж"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=PlaneID}" Header="ID самолета для привязки"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=NameSurname}" Header="ФИО"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Position}" Header="Должность"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Age}" Header="Год рождения"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Experience}" Header="Стаж"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

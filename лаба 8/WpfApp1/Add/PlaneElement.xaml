@@ -42,7 +42,6 @@
             <TextBox Name="planeCapacity" Margin="0 0 0 8"></TextBox>
             <TextBox Name="planeYear" Margin="0 0 0 9"></TextBox>
             <TextBox Name="planeLoadCapacity" Margin="0 0 0 12"></TextBox>
-            <!--<TextBox Name="planeMDate" Margin="0 0 0 9"></TextBox>-->
             <DatePicker Name="planeMDate" Margin="0 0 0 7"></DatePicker>
             <TextBox Name="planeManufacturer"></TextBox>
         </StackPanel>
