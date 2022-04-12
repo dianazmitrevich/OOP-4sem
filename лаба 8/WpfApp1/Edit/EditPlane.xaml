@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1.Edit"
              mc:Ignorable="d" 
-             d:DesignHeight="350"
+             d:DesignHeight="500"
              d:DesignWidth="800"
              Background="#fff">
     <Grid>
@@ -35,7 +35,7 @@
         <Label Grid.Column="1" Content="Параметр" HorizontalAlignment="Center" Margin="0 40 0 0"></Label>
         <Label Grid.Column="2" Content="Новое значение" HorizontalAlignment="Center" Margin="0 40 90 0"></Label>
         <Button Click="ElementToEditButton_Click" Name="ElementToEditButton" Grid.Row="0" Grid.Column="2" Width="25" Height="25" Content="&#10003;" Margin="10 10 -130 10"></Button>
-        <DataGrid Name="DataGridPlanes" Height="252" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" Grid.Row="2" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">
+        <DataGrid Name="DataGridPlanes" Height="380" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" Grid.Row="2" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=ID}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Тип" Binding="{Binding Path=Type}"></DataGridTextColumn>

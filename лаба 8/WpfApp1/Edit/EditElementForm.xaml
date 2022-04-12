@@ -23,7 +23,7 @@
             <Button Name="EditCrew" Click="EditCrew_Click" Content="Экипаж" Width="100" Height="30" Margin="10 0"></Button>
             <Button Name="EditManufacturer" Click="EditManufacturer_Click" Content="Производитель" Width="100" Height="30"></Button>
         </StackPanel>
-        <StackPanel Name="EditElementField" Grid.Row="1" Grid.ColumnSpan="3">
+        <StackPanel Name="EditElementField" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,0,0,31">
             <local:EditPlane></local:EditPlane>
         </StackPanel>
     </Grid>
