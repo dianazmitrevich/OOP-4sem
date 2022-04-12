@@ -6,29 +6,31 @@
         xmlns:local="clr-namespace:WpfApp1.Remove"
         mc:Ignorable="d"
         Title="RemoveElementForm"
-        d:DesignHeight="200"
-        d:DesignWidth="300"
         Background="#fff"
         FontFamily="Noto Sans"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen" Height="200" Width="300">
+        WindowStartupLocation="CenterScreen" Height="147" Width="559">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="407*"/>
+            <ColumnDefinition Width="89*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="45"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="55"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Name="BackButton" Click="BackButton_Click" Content="На главную" HorizontalAlignment="Left" Width="100" Height="30" Margin="10 0"></Button>
-        <ComboBox Name="ElementToRemoveBox" Grid.Row="1" Height="22" Width="200" HorizontalAlignment="Left" Margin="10">
-            <TextBlock Text="PLANE"></TextBlock>
-            <TextBlock Text="CREW_MEMBERS"></TextBlock>
-            <TextBlock Text="MANUFACTURER"></TextBlock>
-        </ComboBox>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Label Content="ID" Margin="5 0"></Label>
-            <TextBox Name="IDToRemove" Width="176" Height="25"></TextBox>
+        <Button Name="BackButton" Click="BackButton_Click" Content="На главную" HorizontalAlignment="Left" Width="100" Height="30" Margin="10,8,0,8"></Button>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="ID" VerticalAlignment="Center"></Label>
+                <TextBox Name="IDToRemove" Width="176" Height="25"></TextBox>
+            </StackPanel>
+            <ComboBox Name="ElementToRemoveBox" Height="24" Width="200" HorizontalAlignment="Left" Margin="10">
+                <TextBlock Text="PLANE"></TextBlock>
+                <TextBlock Text="CREW_MEMBERS"></TextBlock>
+                <TextBlock Text="MANUFACTURER"></TextBlock>
+            </ComboBox>
+            <Button Click="RemoveButton_Click" Name="RemoveButton" Content="Удалить" HorizontalAlignment="Left" Width="100" Height="24"></Button>
         </StackPanel>
-        <Button Click="RemoveButton_Click" Name="RemoveButton" Content="Удалить" Grid.Row="3" HorizontalAlignment="Left" Width="100" Height="30" Margin="10 "></Button>
     </Grid>
 </Window>
