@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,8 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        internal static object command;
+
         public MainWindow()
         {
             InitializeComponent();

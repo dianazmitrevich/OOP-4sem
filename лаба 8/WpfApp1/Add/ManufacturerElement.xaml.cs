@@ -26,15 +26,35 @@ namespace WpfApp1.Add
         public ManufacturerElement()
         {
             InitializeComponent();
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlTransaction transaction = connection.BeginTransaction();
+            SqlCommand command = connection.CreateCommand();
+            command.Transaction = transaction;
+            command.CommandText = "SELECT * FROM MANUFACTURER";
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string name = reader.GetString(1);
+                    string country = reader.GetString(2);
+                    int year = reader.GetInt32(3);
+                    Manufacturer manufacturer = new Manufacturer(id, name, country, year);
+                    DataGridManufacturer.Items.Add(manufacturer);
+                }
+            }
         }
 
         private void AddManufacturerButton_Click(object sender, RoutedEventArgs e)
         {
-            DataGridManufacturer.Items.Clear();
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+                    DataGridManufacturer.Items.Clear();
                     connection.Open();
                     SqlTransaction transaction = connection.BeginTransaction();
                     SqlCommand command = connection.CreateCommand();

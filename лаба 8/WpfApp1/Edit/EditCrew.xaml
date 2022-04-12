@@ -19,21 +19,22 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Margin="10" HorizontalAlignment="Center" Orientation="Horizontal">
-            <TextBox Name="planeID" Width="200" Height="24" Margin="0 0 5 0"></TextBox>
-            <ComboBox Name="planeType" Width="200" Height="24" Margin="0 0 5 0">
-                <TextBlock Text="ID самолета для привязки"></TextBlock>
-                <TextBlock Text="ФИО"></TextBlock>
-                <TextBlock Text="Должность"></TextBlock>
-                <TextBlock Text="Год рождения"></TextBlock>
-                <TextBlock Text="Стаж"></TextBlock>
+            <TextBox Name="crewID" Width="200" Height="24" Margin="0 0 5 0"></TextBox>
+            <ComboBox Name="crewElement" Width="200" Height="24" Margin="0 0 5 0">
+                <TextBlock Text="ID"></TextBlock>
+                <TextBlock Text="NameSurname"></TextBlock>
+                <TextBlock Text="Position"></TextBlock>
+                <TextBlock Text="Age"></TextBlock>
+                <TextBlock Text="Experience"></TextBlock>
+                <TextBlock Text="Plane_ID"></TextBlock>
             </ComboBox>
-            <TextBox Name="planeCapacity" Width="200" Height="24"></TextBox>
+            <TextBox Name="crewNew" Width="200" Height="24"></TextBox>
         </StackPanel>
         <Label Grid.Column="0" Content="ID" Margin="180 40 0 0"></Label>
         <Label Grid.Column="1" Content="Параметр" HorizontalAlignment="Center" Margin="0 40 0 0"></Label>
         <Label Grid.Column="2" Content="Новое значение" HorizontalAlignment="Center" Margin="0 40 90 0"></Label>
-        <Button Name="ElementToEditButton" Grid.Row="0" Grid.Column="2" Width="25" Height="25" Content="&#10003;" Margin="10 10 -130 10"></Button>
-        <DataGrid Height="252" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" Grid.Row="2" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">
+        <Button Name="ElementToEditButton" Click="ElementToEditButton_Click" Grid.Row="0" Grid.Column="2" Width="25" Height="25" Content="&#10003;" Margin="10 10 -130 10"></Button>
+        <DataGrid Height="252" Name="DataGridEditCrew" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" Grid.Row="2" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID"></DataGridTextColumn>
                 <DataGridTextColumn Header="ID самолета для привязки"></DataGridTextColumn>

@@ -27,6 +27,30 @@ namespace WpfApp1.Add
         public PlaneElement()
         {
             InitializeComponent();
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlTransaction transaction = connection.BeginTransaction();
+            SqlCommand command = connection.CreateCommand();
+            command.Transaction = transaction;
+            command.CommandText = "SELECT PLANE.ID, PLANE.Type, PLANE.Model, PLANE.Capacity, PLANE.Year, PLANE.Load_Capacity, PLANE.Maintenance_Date, MANUFACTURER.Name FROM PLANE INNER JOIN MANUFACTURER ON MANUFACTURER.ID=PLANE.Manufacturer_ID";
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string type = reader.GetString(1);
+                    string model = reader.GetString(2);
+                    int capacity = reader.GetInt32(3);
+                    int year = reader.GetInt32(4);
+                    string loadCapacity = reader.GetString(5);
+                    DateTime maintenance = reader.GetDateTime(6);
+                    string manufacturer = reader.GetString(7);
+                    Plane plane = new Plane(id, type, model, capacity, year, loadCapacity, maintenance, manufacturer);
+                    DataGridPlanes.Items.Add(plane);
+                }
+            }
         }
 
         private void rbAirbus_Checked(object sender, RoutedEventArgs e) => radioButtonModel = "Airbus";
@@ -34,11 +58,11 @@ namespace WpfApp1.Add
 
         private void AddPlaneButton_Click(object sender, RoutedEventArgs e)
         {
-            DataGridPlanes.Items.Clear();
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+                    DataGridPlanes.Items.Clear();
                     connection.Open();
                     SqlTransaction transaction = connection.BeginTransaction();
                     SqlCommand command = connection.CreateCommand();
@@ -47,7 +71,7 @@ namespace WpfApp1.Add
                     command.CommandText = "INSERT INTO PLANE (ID, Type, Model, Capacity, Year, Load_Capacity, Maintenance_Date, Manufacturer_ID) VALUES (" + Convert.ToInt32(planeID.Text) + ", '" + Convert.ToString(planeType.Text) + "', '" + radioButtonModel + "', " + Convert.ToInt32(planeCapacity.Text) + ", " + Convert.ToInt32(planeYear.Text) + ", '" + planeLoadCapacity.Text + "', '" + Convert.ToDateTime(planeMDate.Text) + "', " + Convert.ToInt32(planeManufacturer.Text) + ")";
                     command.ExecuteNonQuery();
                     transaction.Commit();
-                    command.CommandText = "SELECT * FROM PLANE";
+                    command.CommandText = "SELECT PLANE.ID, PLANE.Type, PLANE.Model, PLANE.Capacity, PLANE.Year, PLANE.Load_Capacity, PLANE.Maintenance_Date, MANUFACTURER.Name FROM PLANE INNER JOIN MANUFACTURER ON MANUFACTURER.ID=PLANE.Manufacturer_ID";
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
@@ -60,7 +84,7 @@ namespace WpfApp1.Add
                             int year = reader.GetInt32(4);
                             string loadCapacity = reader.GetString(5);
                             DateTime maintenance = reader.GetDateTime(6);
-                            int manufacturer = reader.GetInt32(7);
+                            string manufacturer = reader.GetString(7);
                             Plane plane = new Plane(id, type, model, capacity, year, loadCapacity, maintenance, manufacturer);
                             DataGridPlanes.Items.Add(plane);
                         }

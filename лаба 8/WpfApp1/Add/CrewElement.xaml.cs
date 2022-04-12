@@ -26,6 +26,28 @@ namespace WpfApp1.Add
         public CrewElement()
         {
             InitializeComponent();
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlTransaction transaction = connection.BeginTransaction();
+            SqlCommand command = connection.CreateCommand();
+            command.Transaction = transaction;
+            command.CommandText = "SELECT * FROM CREW_MEMBERS";
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string nameSurname = reader.GetString(1);
+                    string position = reader.GetString(2);
+                    int age = reader.GetInt32(3);
+                    int experience = reader.GetInt32(4);
+                    int planeID = reader.GetInt32(5);
+                    CrewMember crew = new CrewMember(id, nameSurname, position, age, experience, planeID);
+                    DataGridCrew.Items.Add(crew);
+                }
+            }
         }
 
         private void AddCrewMemberButton_Click(object sender, RoutedEventArgs e)

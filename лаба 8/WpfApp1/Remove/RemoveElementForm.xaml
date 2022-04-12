@@ -20,15 +20,15 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Button Name="BackButton" Click="BackButton_Click" Content="На главную" HorizontalAlignment="Left" Width="100" Height="30" Margin="10 0"></Button>
-        <ComboBox Name="ElementToAddBox" Grid.Row="1" Height="22" Width="200" HorizontalAlignment="Left" Margin="10">
-            <TextBlock Text="Самолет"></TextBlock>
-            <TextBlock Text="Работник"></TextBlock>
-            <TextBlock Text="Производитель"></TextBlock>
+        <ComboBox Name="ElementToRemoveBox" Grid.Row="1" Height="22" Width="200" HorizontalAlignment="Left" Margin="10">
+            <TextBlock Text="PLANE"></TextBlock>
+            <TextBlock Text="CREW_MEMBERS"></TextBlock>
+            <TextBlock Text="MANUFACTURER"></TextBlock>
         </ComboBox>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Label Content="ID" Margin="5 0"></Label>
-            <TextBox Width="176" Height="25"></TextBox>
+            <TextBox Name="IDToRemove" Width="176" Height="25"></TextBox>
         </StackPanel>
-        <Button Name="RemoveButton" Content="Удалить" Grid.Row="3" HorizontalAlignment="Left" Width="100" Height="30" Margin="10 "></Button>
+        <Button Click="RemoveButton_Click" Name="RemoveButton" Content="Удалить" Grid.Row="3" HorizontalAlignment="Left" Width="100" Height="30" Margin="10 "></Button>
     </Grid>
 </Window>

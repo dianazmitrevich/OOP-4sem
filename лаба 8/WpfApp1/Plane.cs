@@ -15,10 +15,10 @@ namespace WpfApp1
         public int Year { get; set; }
         public string LoadCapacity { get; set; }
         public DateTime Maintenance { get; set; }
-        public int Manufacturer { get; set; }
+        public string Manufacturer { get; set; }
 
         public Plane(int id, string type, string model, int capacity, int year, string loadCapacity,
-            DateTime maintenance, int manufacturer)
+            DateTime maintenance, string manufacturer)
         {
             this.ID = id;
             this.Type = type;
