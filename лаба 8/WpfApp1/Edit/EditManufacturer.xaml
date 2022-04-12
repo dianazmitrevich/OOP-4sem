@@ -19,24 +19,24 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Margin="10" HorizontalAlignment="Center" Orientation="Horizontal">
-            <TextBox Name="planeID" Width="200" Height="24" Margin="0 0 5 0"></TextBox>
-            <ComboBox Name="planeType" Width="200" Height="24" Margin="0 0 5 0">
-                <TextBlock Text="Название"></TextBlock>
-                <TextBlock Text="Страна"></TextBlock>
-                <TextBlock Text="Год основания"></TextBlock>
+            <TextBox Name="manufacturerID" Width="200" Height="24" Margin="0 0 5 0"></TextBox>
+            <ComboBox Name="manufacturerParameter" Width="200" Height="24" Margin="0 0 5 0">
+                <TextBlock Text="Name"></TextBlock>
+                <TextBlock Text="Country"></TextBlock>
+                <TextBlock Text="Year"></TextBlock>
             </ComboBox>
-            <TextBox Name="planeCapacity" Width="200" Height="24"></TextBox>
+            <TextBox Name="manufacturerNewParameter" Width="200" Height="24"></TextBox>
         </StackPanel>
         <Label Grid.Column="0" Content="ID" Margin="180 40 0 0"></Label>
         <Label Grid.Column="1" Content="Параметр" HorizontalAlignment="Center" Margin="0 40 0 0"></Label>
         <Label Grid.Column="2" Content="Новое значение" HorizontalAlignment="Center" Margin="0 40 90 0"></Label>
-        <Button Name="ElementToEditButton" Grid.Row="0" Grid.Column="2" Width="25" Height="25" Content="&#10003;" Margin="10 10 -130 10"></Button>
-        <DataGrid Height="252" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" Grid.Row="2" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">
+        <Button Name="ElementToEditButton" Click="ElementToEditButton_Click" Grid.Row="0" Grid.Column="2" Width="25" Height="25" Content="&#10003;" Margin="10 10 -130 10"></Button>
+        <DataGrid Name="DataGridManufacturer" Height="252" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" Grid.Row="2" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID"></DataGridTextColumn>
-                <DataGridTextColumn Header="Название"></DataGridTextColumn>
-                <DataGridTextColumn Header="Страна"></DataGridTextColumn>
-                <DataGridTextColumn Header="Год основания"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Название"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Country}" Header="Страна"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Year}" Header="Год основания"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
