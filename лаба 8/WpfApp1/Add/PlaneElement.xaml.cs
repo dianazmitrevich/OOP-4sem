@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -96,6 +97,46 @@ namespace WpfApp1.Add
             {
                 MessageBox.Show($"Ошибка: {x.Message}", "Сообщение об ошибке", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void planeID_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(planeID.Text, @"\D") || planeID.Text == "")
+                planeID.BorderBrush = Brushes.Red;
+            else
+                planeID.BorderBrush = Brushes.LimeGreen;
+        }
+
+        private void planeCapacity_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(planeCapacity.Text, @"\D") || planeCapacity.Text == "")
+                planeCapacity.BorderBrush = Brushes.Red;
+            else
+                planeCapacity.BorderBrush = Brushes.LimeGreen;
+        }
+
+        private void planeYear_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(planeYear.Text, @"\D") || planeYear.Text == "" || planeYear.Text.Length != 4)
+                planeYear.BorderBrush = Brushes.Red;
+            else
+                planeYear.BorderBrush = Brushes.LimeGreen;
+        }
+
+        private void planeLoadCapacity_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (planeLoadCapacity.Text == "")
+                planeLoadCapacity.BorderBrush = Brushes.Red;
+            else
+                planeLoadCapacity.BorderBrush = Brushes.LimeGreen;
+        }
+
+        private void planeManufacturer_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(planeManufacturer.Text, @"\D") || planeManufacturer.Text == "")
+                planeManufacturer.BorderBrush = Brushes.Red;
+            else
+                planeManufacturer.BorderBrush = Brushes.LimeGreen;
         }
     }
 }

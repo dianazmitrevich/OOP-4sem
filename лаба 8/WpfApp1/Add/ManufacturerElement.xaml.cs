@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -84,6 +85,38 @@ namespace WpfApp1.Add
             {
                 MessageBox.Show($"Ошибка: {x.Message}", "Сообщение об ошибке", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void manufacturerID_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(manufacturerID.Text, @"\D") || manufacturerID.Text == "")
+                manufacturerID.BorderBrush = Brushes.Red;
+            else
+                manufacturerID.BorderBrush = Brushes.LimeGreen;
+        }
+
+        private void manufacturerName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(manufacturerName.Text, @"\d") || manufacturerName.Text == "")
+                manufacturerName.BorderBrush = Brushes.Red;
+            else
+                manufacturerName.BorderBrush = Brushes.LimeGreen;
+        }
+
+        private void manufacturerCountry_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(manufacturerCountry.Text, @"\d") || manufacturerCountry.Text == "")
+                manufacturerCountry.BorderBrush = Brushes.Red;
+            else
+                manufacturerCountry.BorderBrush = Brushes.LimeGreen;
+        }
+
+        private void manufacturerYear_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(manufacturerYear.Text, @"\D") || manufacturerYear.Text == "" || manufacturerYear.Text.Length != 4)
+                manufacturerYear.BorderBrush = Brushes.Red;
+            else
+                manufacturerYear.BorderBrush = Brushes.LimeGreen;
         }
     }
 }

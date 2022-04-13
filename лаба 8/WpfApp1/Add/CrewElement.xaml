@@ -24,18 +24,18 @@
             <Label Content="ФИО" HorizontalAlignment="Right"></Label>
             <Label Content="Должность" HorizontalAlignment="Right"></Label>
             <Label Content="Год рождения" HorizontalAlignment="Right"></Label>
-            <Label Content="Стаж" HorizontalAlignment="Right"></Label>
+            <Label Content="Стаж (лет)" HorizontalAlignment="Right"></Label>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Margin="10" HorizontalAlignment="Left">
             <TextBox Name="crewID" LostFocus="crewID_LostFocus" Width="200" Margin="0 0 0 6"></TextBox>
-            <TextBox Name="crewPlaneID" Margin="0 0 0 8"></TextBox>
-            <TextBox Name="crewFIO" Margin="0 0 0 8"></TextBox>
+            <TextBox Name="crewPlaneID" LostFocus="crewPlaneID_LostFocus" Margin="0 0 0 8"></TextBox>
+            <TextBox Name="crewFIO" LostFocus="crewFIO_LostFocus" Margin="0 0 0 8"></TextBox>
             <ComboBox Name="crewPosition" Margin="0 0 0 7">
                 <TextBlock Text="Пилот"></TextBlock>
                 <TextBlock Text="Стюард"></TextBlock>
             </ComboBox>
-            <TextBox Name="crewBirthYear" Margin="0 0 0 6"></TextBox>
-            <TextBox Name="crewExperience"></TextBox>
+            <TextBox Name="crewBirthYear" LostFocus="crewBirthYear_LostFocus" Margin="0 0 0 6"></TextBox>
+            <TextBox Name="crewExperience" LostFocus="crewExperience_LostFocus"></TextBox>
         </StackPanel>
         <Button Name="AddCrewMemberButton" Click="AddCrewMemberButton_Click" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="42" Content="Добавить" Margin="10"></Button>
         <DataGrid Name="DataGridCrew" Height="270" VerticalScrollBarVisibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Margin="11,11,9,12" Background="#fff" AutoGenerateColumns="True">

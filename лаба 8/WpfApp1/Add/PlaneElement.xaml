@@ -24,12 +24,12 @@
             <Label Content="Модель" Margin="0 0 0 12" HorizontalAlignment="Right"></Label>
             <Label Content="Вместимость (человек)" HorizontalAlignment="Right"></Label>
             <Label Content="Год" HorizontalAlignment="Right"></Label>
-            <Label Content="Грузоподъёмность (т)" Margin="0 0 0 5" HorizontalAlignment="Right"></Label>
+            <Label Content="Грузоподъёмность" Margin="0 0 0 5" HorizontalAlignment="Right"></Label>
             <Label Content="Дата последнего ТО" HorizontalAlignment="Right"></Label>
-            <Label Content="Производитель*" HorizontalAlignment="Right"></Label>
+            <Label Content="Производитель" HorizontalAlignment="Right"></Label>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Margin="10" HorizontalAlignment="Left">
-            <TextBox Name="planeID" Width="200" Margin="0 0 0 6"></TextBox>
+            <TextBox Name="planeID" LostFocus="planeID_LostFocus" Width="200" Margin="0 0 0 6"></TextBox>
             <ComboBox Name="planeType" Margin="0 0 0 7">
                 <TextBlock Text="Пассажирский"></TextBlock>
                 <TextBlock Text="Военный"></TextBlock>
@@ -39,11 +39,11 @@
                 <RadioButton Name="rbAirbus" Checked="rbAirbus_Checked" Content="Airbus"></RadioButton>
                 <RadioButton Name="rbBoeing" Checked="rbBoeing_Checked" Content="Boeing"></RadioButton>
             </StackPanel>
-            <TextBox Name="planeCapacity" Margin="0 0 0 8"></TextBox>
-            <TextBox Name="planeYear" Margin="0 0 0 9"></TextBox>
-            <TextBox Name="planeLoadCapacity" Margin="0 0 0 12"></TextBox>
+            <TextBox Name="planeCapacity" LostFocus="planeCapacity_LostFocus" Margin="0 0 0 8"></TextBox>
+            <TextBox Name="planeYear" LostFocus="planeYear_LostFocus" Margin="0 0 0 9"></TextBox>
+            <TextBox Name="planeLoadCapacity" LostFocus="planeLoadCapacity_LostFocus" Margin="0 0 0 12"></TextBox>
             <DatePicker Name="planeMDate" Margin="0 0 0 7"></DatePicker>
-            <TextBox Name="planeManufacturer"></TextBox>
+            <TextBox Name="planeManufacturer" LostFocus="planeManufacturer_LostFocus"></TextBox>
         </StackPanel>
         <Button Name="AddPlaneButton" Click="AddPlaneButton_Click" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="45" Content="Добавить" Margin="10"></Button>
         <DataGrid Name="DataGridPlanes" VerticalAlignment="Top" Height="200" VerticalScrollBarVisibility="Visible" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" Background="#fff" AutoGenerateColumns="True">

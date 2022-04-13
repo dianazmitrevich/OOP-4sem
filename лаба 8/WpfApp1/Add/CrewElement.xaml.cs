@@ -99,5 +99,37 @@ namespace WpfApp1.Add
             else
                 crewID.BorderBrush = Brushes.LimeGreen;
         }
+
+        private void crewPlaneID_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(crewPlaneID.Text, @"\D") || crewPlaneID.Text == "")
+                crewPlaneID.BorderBrush = Brushes.Red;
+            else
+                crewPlaneID.BorderBrush = Brushes.LimeGreen;
+        }
+
+        private void crewFIO_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(crewFIO.Text, @"\d") || crewFIO.Text == "")
+                crewFIO.BorderBrush = Brushes.Red;
+            else
+                crewFIO.BorderBrush = Brushes.LimeGreen;
+        }
+
+        private void crewBirthYear_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(crewBirthYear.Text, @"\D") || crewBirthYear.Text == "" || crewBirthYear.Text.Length > 4)
+                crewBirthYear.BorderBrush = Brushes.Red;
+            else
+                crewBirthYear.BorderBrush = Brushes.LimeGreen;
+        }
+
+        private void crewExperience_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(crewExperience.Text, @"\D") || crewExperience.Text == "" || crewExperience.Text.Length > 2)
+                crewExperience.BorderBrush = Brushes.Red;
+            else
+                crewExperience.BorderBrush = Brushes.LimeGreen;
+        }
     }
 }
