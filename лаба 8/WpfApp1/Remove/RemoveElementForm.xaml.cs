@@ -40,16 +40,38 @@ namespace WpfApp1.Remove
             {
                 string tableName = Convert.ToString(ElementToRemoveBox.Text);
                 string idName = Convert.ToString(IDToRemove.Text);
+                int planeRowCount = 0, planeRowCountNew = 0;
 
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlTransaction transaction = connection.BeginTransaction();
                 SqlCommand command = connection.CreateCommand();
                 command.Transaction = transaction;
+
+                command.CommandText = "SELECT COUNT(*) FROM " + tableName + "";
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                    while (reader.Read())
+                    {
+                        planeRowCount = reader.GetInt32(0);
+                    }
+                reader.Close();
+
                 command.CommandText = "DELETE FROM " + tableName + " WHERE ID=" + idName + "";
                 command.ExecuteNonQuery();
                 transaction.Commit();
-                MessageBox.Show("Данные удалены", "Удаление данных", MessageBoxButton.OK, MessageBoxImage.Information);
+                command.CommandText = "SELECT COUNT(*) FROM " + tableName + "";
+                SqlDataReader readerNew = command.ExecuteReader();
+                if (readerNew.HasRows)
+                    while (readerNew.Read())
+                    {
+                        planeRowCountNew = readerNew.GetInt32(0);
+                    }
+
+                if (planeRowCount == planeRowCountNew)
+                    MessageBox.Show("Элемента с таким ID не существует", "Удаление данных", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                    MessageBox.Show("Данные удалены", "Удаление данных", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception x)
             {
