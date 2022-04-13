@@ -66,7 +66,14 @@ namespace WpfApp1.Edit
                     SqlTransaction transaction = connection.BeginTransaction();
                     SqlCommand command = connection.CreateCommand();
                     command.Transaction = transaction;
-                    command.CommandText = "UPDATE CREW_MEMBERS SET CREW_MEMBERS." + parameter + "='" + newValue + "' WHERE CREW_MEMBERS.ID=" + manufacturerName + "";
+
+                    if (crewParameter.Text == "NameSurname" || crewParameter.Text == "Position")
+                        command.CommandText = "UPDATE CREW_MEMBERS SET CREW_MEMBERS." + parameter + "='" + newValue + "' WHERE CREW_MEMBERS.ID=" + manufacturerName + "";
+                    else if(crewParameter.Text == "Age" || crewParameter.Text == "Experience" || crewParameter.Text == "Plane_ID")
+                        command.CommandText = "UPDATE CREW_MEMBERS SET CREW_MEMBERS." + parameter + "=" + newValue + " WHERE CREW_MEMBERS.ID=" + manufacturerName + "";
+                    else
+                        MessageBox.Show("Выберите хоть один параметр для изменения");
+
                     command.ExecuteNonQuery();
                     transaction.Commit();
                     command.CommandText = "SELECT * FROM CREW_MEMBERS";

@@ -26,7 +26,6 @@
                 <TextBlock Text="Capacity"></TextBlock>
                 <TextBlock Text="Year"></TextBlock>
                 <TextBlock Text="Load_Capacity"></TextBlock>
-                <TextBlock Text="Maintenance_Date"></TextBlock>
                 <TextBlock Text="Manufacturer_ID"></TextBlock>
             </ComboBox>
             <TextBox Name="planeNewParameter" Width="200" Height="24"></TextBox>
