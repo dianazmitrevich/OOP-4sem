@@ -27,7 +27,7 @@
             <Label Content="Стаж" HorizontalAlignment="Right"></Label>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Margin="10" HorizontalAlignment="Left">
-            <TextBox Name="crewID" Width="200" Margin="0 0 0 6"></TextBox>
+            <TextBox Name="crewID" LostFocus="crewID_LostFocus" Width="200" Margin="0 0 0 6"></TextBox>
             <TextBox Name="crewPlaneID" Margin="0 0 0 8"></TextBox>
             <TextBox Name="crewFIO" Margin="0 0 0 8"></TextBox>
             <ComboBox Name="crewPosition" Margin="0 0 0 7">

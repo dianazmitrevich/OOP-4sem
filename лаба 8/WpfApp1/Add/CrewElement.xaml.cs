@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -88,6 +90,14 @@ namespace WpfApp1.Add
             {
                 MessageBox.Show($"Ошибка: {x.Message}", "Сообщение об ошибке", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void crewID_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(crewID.Text, @"\D") || crewID.Text == "")
+                crewID.BorderBrush = Brushes.Red;
+            else
+                crewID.BorderBrush = Brushes.LimeGreen;
         }
     }
 }

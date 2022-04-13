@@ -24,8 +24,6 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        internal static object command;
-
         public MainWindow()
         {
             InitializeComponent();
