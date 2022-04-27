@@ -6,10 +6,26 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Entity Framework"
-        Height="450" Width="800"
+        Height="450" Width="682"
         ResizeMode="NoResize">
     <Grid>
-        <DataGrid Name="ItemsGrid" HorizontalAlignment="Left" Height="224" Margin="10,175,0,0" VerticalAlignment="Top" Width="428"/>
+        <DataGrid Name="ItemsGrid" HorizontalAlignment="Left" Height="224" Margin="10,175,0,0" VerticalAlignment="Top" Width="428" SelectionChanged="ItemsGrid_SelectionChanged"/>
+        <Label Content="Название" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="NameBox" HorizontalAlignment="Left" Height="23" Margin="88,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Материал" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="MaterialBox" HorizontalAlignment="Left" Height="23" Margin="88,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Цвет" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="ColorBox" HorizontalAlignment="Left" Height="23" Margin="88,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Name="AddButton" Click="AddButton_Click" Content="Добавить" HorizontalAlignment="Left" Margin="220,96,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="UpdateButton" Click="UpdateButton_Click" Content="Обновить таблицу" HorizontalAlignment="Left" Margin="10,143,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Название" HorizontalAlignment="Left" Margin="456,188,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="NameBox_U" HorizontalAlignment="Left" Height="23" Margin="534,191,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Материал" HorizontalAlignment="Left" Margin="456,226,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="MaterialBox_U" HorizontalAlignment="Left" Height="23" Margin="534,229,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Цвет" HorizontalAlignment="Left" Margin="456,261,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ColorBox_U" HorizontalAlignment="Left" Height="23" Margin="534,264,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="DeleteButton" Click="DeleteButton_Click" Content="Удалить" HorizontalAlignment="Left" Margin="456,302,0,0" VerticalAlignment="Top" Width="85"/>
+        <Button x:Name="UpdateDBButton" Click="UpdateDBButton_Click" Content="Обновить бд" HorizontalAlignment="Left" Margin="559,302,0,0" VerticalAlignment="Top" Width="95"/>
 
     </Grid>
 </Window>
