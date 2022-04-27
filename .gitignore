@@ -17,3 +17,7 @@ packages/
 *.xsc
 *.xsd
 *.xss
+*.tt
+*.Designer.cs
+*.edmx
+*.edmx.diagram
