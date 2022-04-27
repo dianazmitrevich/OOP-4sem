@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 
@@ -106,6 +107,26 @@ namespace WpfApp1
             }
 
             db.SaveChanges();
+        }
+
+        private void Sort_1_Click(object sender, RoutedEventArgs e)
+        {
+            FurnitureDBEntities db = new FurnitureDBEntities();
+            var items = from d in db.Items
+                        where d.Name.StartsWith("П")
+                        select d;
+
+            this.ItemsGrid.ItemsSource = items.ToList();
+        }
+
+        private void Sort_2_Click(object sender, RoutedEventArgs e)
+        {
+            FurnitureDBEntities db = new FurnitureDBEntities();
+            var items = from d in db.Items
+                        where d.Color.Contains("бел")
+                        select d;
+
+            this.ItemsGrid.ItemsSource = items.ToList();
         }
     }
 }

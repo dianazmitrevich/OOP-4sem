@@ -26,6 +26,8 @@
         <TextBox x:Name="ColorBox_U" HorizontalAlignment="Left" Height="23" Margin="534,264,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="DeleteButton" Click="DeleteButton_Click" Content="Удалить" HorizontalAlignment="Left" Margin="456,302,0,0" VerticalAlignment="Top" Width="85"/>
         <Button x:Name="UpdateDBButton" Click="UpdateDBButton_Click" Content="Обновить бд" HorizontalAlignment="Left" Margin="559,302,0,0" VerticalAlignment="Top" Width="95"/>
+        <Button x:Name="Sort_1" Click="Sort_1_Click" Content="Сортировка на 'П'" HorizontalAlignment="Left" Margin="456,349,0,0" VerticalAlignment="Top" Width="198"/>
+        <Button x:Name="Sort_2" Click="Sort_2_Click" Content="Сортировка по цвету (белый)" HorizontalAlignment="Left" Margin="456,379,0,0" VerticalAlignment="Top" Width="198"/>
 
     </Grid>
 </Window>
