@@ -18,6 +18,12 @@ namespace WpfApp1.Model
         public string FIO { get; set; }
         public string Discipline { get; set; }
         public string Date { get; set; }
+
+        internal void Add(Consultation consultation)
+        {
+            throw new NotImplementedException();
+        }
+
         public string Duration { get; set; }
     }
 }

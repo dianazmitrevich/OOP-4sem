@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:local="clr-namespace:WpfApp1" xmlns:viewmodel="clr-namespace:WpfApp1.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
         mc:Ignorable="d"
         Title="MVVM"
         Height="581" Width="568"
@@ -20,16 +20,16 @@
             <ColumnDefinition Width="295*"></ColumnDefinition>
             <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
-        <ListView ItemsSource="" IsSynchronizedWithCurrentItem="True" BorderBrush="Transparent">
+        <ListView ItemsSource="{Binding ConsultationList}" IsSynchronizedWithCurrentItem="True" BorderBrush="Transparent">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="LightGray" BorderThickness="1 0 1 1" Grid.Row="0" Grid.Column="0" Margin="10">
                         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
-                            <Label Content="Евген Евгений Евгеныч" FontWeight="DemiBold" BorderBrush="red" BorderThickness="0 2 0 0"></Label>
-                            <Label Content="Основы информационных технологий"></Label>
+                            <Label Content="{Binding FIO}" FontWeight="DemiBold" BorderBrush="red" BorderThickness="0 2 0 0"></Label>
+                            <Label Content="{Binding Discipline}"></Label>
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="20 мая" HorizontalAlignment="Left"></Label>
-                                <Label Content="16:00" HorizontalAlignment="Right"></Label>
+                                <Label Content="{Binding Date}" HorizontalAlignment="Left"></Label>
+                                <Label Content="{Binding Duration}" HorizontalAlignment="Right"></Label>
                             </StackPanel>
                             <Label Content="Вы не записаны" HorizontalAlignment="Right" FontStyle="Italic" Margin="0 10 5 0"></Label>
                         </StackPanel>
