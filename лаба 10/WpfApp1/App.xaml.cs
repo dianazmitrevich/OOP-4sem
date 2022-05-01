@@ -31,9 +31,9 @@ namespace WpfApp1
                 consultation.Add(item);
             }
 
-            MainWindow view = new MainWindow(); // создали View
-            MainViewModel viewModel = new MainViewModel(consultation); // Создали ViewModel
-            view.DataContext = viewModel; // положили ViewModel во View в качестве DataContext
+            MainWindow view = new MainWindow();
+            MainViewModel viewModel = new MainViewModel(consultation);
+            view.DataContext = viewModel;
             view.Show();
         }
     }

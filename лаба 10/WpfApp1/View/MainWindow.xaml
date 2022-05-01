@@ -20,10 +20,10 @@
             <ColumnDefinition Width="295*"></ColumnDefinition>
             <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
-        <ListView ItemsSource="{Binding ConsultationList}" IsSynchronizedWithCurrentItem="True" BorderBrush="Transparent">
+        <ListView ItemsSource="{Binding ConsultationList}" IsSynchronizedWithCurrentItem="True" BorderBrush="Transparent" Grid.RowSpan="4">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="LightGray" BorderThickness="1 0 1 1" Grid.Row="0" Grid.Column="0" Margin="10">
+                    <Border BorderBrush="LightGray" BorderThickness="1 0 1 1" Grid.Row="0" Grid.Column="0" Margin="10" Width="205">
                         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
                             <Label Content="{Binding FIO}" FontWeight="DemiBold" BorderBrush="red" BorderThickness="0 2 0 0"></Label>
                             <Label Content="{Binding Discipline}"></Label>
@@ -37,10 +37,20 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBox Grid.Column="1" IsEnabled="False" Height="18" Margin="10,16,8,0" TextWrapping="Wrap" Text="Евген Евгений Евгеныч" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Height="18" Margin="10,40,0,0" TextWrapping="Wrap" Text="Основы информационных технологий" VerticalAlignment="Top" Width="277"/>
-        <TextBox Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Height="18" Margin="10,64,0,0" TextWrapping="Wrap" Text="20 мая, 16:00" VerticalAlignment="Top" Width="275"/>
-        <Button Content="Записаться" Grid.Column="1" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="132" Height="20"/>
-        <Button Content="Отписаться" Grid.Column="1" HorizontalAlignment="Left" Margin="153,105,0,0" VerticalAlignment="Top" Width="132" Height="20"/>
+        <ContentControl Grid.Column="1" Content="{Binding ConsultationList}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="15 15 15 5">
+                        <TextBox IsEnabled="False" Height="18" TextWrapping="Wrap" Text="{Binding FIO,  UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="260"/>
+                        <TextBox IsEnabled="False" Margin="0 5 0 0" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="{Binding Discipline, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="260"/>
+                        <TextBox IsEnabled="False" Margin="0 5 0 0" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="{Binding Date, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="260"/>
+                        <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                            <Button Content="Записаться" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="0 0 20 0" Height="20"/>
+                            <Button Content="Отписаться" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="20"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
     </Grid>
 </Window>
