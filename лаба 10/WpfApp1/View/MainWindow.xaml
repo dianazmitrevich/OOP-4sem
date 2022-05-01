@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApp1.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MVVM"
+        Height="581" Width="568"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"></RowDefinition>
+            <RowDefinition Height="35*"></RowDefinition>
+            <RowDefinition Height="35*"></RowDefinition>
+            <RowDefinition Height="33*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260*"></ColumnDefinition>
+            <ColumnDefinition Width="295*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <ListView ItemsSource="" IsSynchronizedWithCurrentItem="True" BorderBrush="Transparent">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="LightGray" BorderThickness="1 0 1 1" Grid.Row="0" Grid.Column="0" Margin="10">
+                        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+                            <Label Content="Евген Евгений Евгеныч" FontWeight="DemiBold" BorderBrush="red" BorderThickness="0 2 0 0"></Label>
+                            <Label Content="Основы информационных технологий"></Label>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="20 мая" HorizontalAlignment="Left"></Label>
+                                <Label Content="16:00" HorizontalAlignment="Right"></Label>
+                            </StackPanel>
+                            <Label Content="Вы не записаны" HorizontalAlignment="Right" FontStyle="Italic" Margin="0 10 5 0"></Label>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBox Grid.Column="1" IsEnabled="False" Height="18" Margin="10,16,8,0" TextWrapping="Wrap" Text="Евген Евгений Евгеныч" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Height="18" Margin="10,40,0,0" TextWrapping="Wrap" Text="Основы информационных технологий" VerticalAlignment="Top" Width="277"/>
+        <TextBox Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Height="18" Margin="10,64,0,0" TextWrapping="Wrap" Text="20 мая, 16:00" VerticalAlignment="Top" Width="275"/>
+        <Button Content="Записаться" Grid.Column="1" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="132" Height="20"/>
+        <Button Content="Отписаться" Grid.Column="1" HorizontalAlignment="Left" Margin="153,105,0,0" VerticalAlignment="Top" Width="132" Height="20"/>
+    </Grid>
+</Window>
