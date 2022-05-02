@@ -25,5 +25,6 @@ namespace WpfApp1.Model
         }
 
         public string Duration { get; set; }
+        public string Enrollment { get; set; }
     }
 }

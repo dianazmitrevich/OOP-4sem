@@ -26,7 +26,8 @@ namespace WpfApp1
                     FIO = item.FIO,
                     Discipline = item.Discipline,
                     Date = item.Date,
-                    Duration = item.Duration
+                    Duration = item.Duration,
+                    Enrollment = item.Enrollment
                 };
                 consultation.Add(item);
             }
